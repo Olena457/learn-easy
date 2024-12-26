@@ -1,0 +1,23 @@
+.imageContainer {
+  min-width: 285px;
+  min-height: 482px;
+  margin: 24px 0px 24px 0px;
+  border-radius: 30px;
+  background-image: var(--theme-image);
+  background-size: cover;
+  background-position: center;
+}
+@media (min-width: 768px) {
+  .imageContainer {
+    margin: 0px 0px 24px 0px;
+    min-height: 450px;
+    min-width: 310px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .imageContainer {
+    min-width: 576px;
+    min-height: 532px;
+  }
+}

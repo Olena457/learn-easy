@@ -1,0 +1,46 @@
+.themeSwitcher {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  padding-top: 15px;
+}
+.circle {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+.circle:hover {
+  transform: scale(1.1);
+}
+.btnBlue {
+  background-color: #9fb7ce;
+}
+.btnYellow {
+  background-color: #f4c550;
+}
+.btnRed {
+  background-color: #e0a39a;
+}
+@media (min-width: 768px) and (max-width: 1439px) {
+  .circle {
+    width: 18px;
+    height: 18px;
+  }
+  .themeSwitcher {
+    padding-top: 0px;
+    gap: 18px;
+  }
+}
+@media (min-width: 1440px) {
+  .circle {
+    width: 25px;
+    height: 25px;
+  }
+  .themeSwitcher {
+    padding-top: 0px;
+    gap: 20px;
+  }
+}
