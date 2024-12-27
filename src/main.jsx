@@ -2,8 +2,7 @@
 // import { createRoot } from 'react-dom/client';
 // import './index.css';
 // import App from './App.jsx';
-// import { ThemeProvider } from './components/context/ThemeContext.js';
-
+//
 // createRoot(document.getElementById('root')).render(
 //   <StrictMode>
 //     <ThemeProvider>
@@ -15,12 +14,12 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import { ThemeProvider } from './components/ThemeProvider/ThemeProvider.jsx';
-import { ModalProvider } from './contextModal/ModalProvider.jsx';
+import { ModalProvider } from './contextModal/ModalContext.jsx';
 import App from './App.jsx';
 import store from './redux/store.js';
 import './index.css';
 import ReactModal from 'react-modal';
+import { ThemeProvider } from './contextTheme/ThemeContext.jsx';
 
 ReactModal.setAppElement('#root');
 
