@@ -9,6 +9,7 @@ import eyeIcon from '../../icons/eye.svg';
 import { toast } from 'react-toastify';
 import { useDispatch } from 'react-redux';
 import { loginUser } from '../../redux/auth/operationsAuth.js';
+import useModal from '../../contextModal/useModal.js';
 
 const emailRegExp = /^[\w.-]+@[a-zA-Z]+\.[a-zA-Z]{2,}$/;
 
@@ -29,7 +30,7 @@ const signInSchema = yup.object({
     .max(maxPasswordLength, 'Too long'),
 });
 
-const SignIn = ({ modalClose }) => {
+const SignIn = () => {
   const dispatch = useDispatch();
   const [isPassword, setIsPassword] = useState(true);
 

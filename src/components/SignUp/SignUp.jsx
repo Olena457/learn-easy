@@ -31,7 +31,7 @@ const signUpSchema = yup.object({
     .max(maxPasswordLength, 'Too long'),
 });
 
-const SignUp = ({ modalClose }) => {
+const SignUp = () => {
   const dispatch = useDispatch();
   const [isPassword, setIsPassword] = useState(true);
 
