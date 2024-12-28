@@ -1,5 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchTeachers, fetchTeachersPaginated } from './operationsTeachers.js';
+import {
+  fetchTeachers,
+  fetchTeachersPaginated,
+} from '../teachers/operationsTeachers.js';
 const teachersSlice = createSlice({
   name: 'teachers',
   initialState: {

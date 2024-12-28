@@ -1,5 +1,5 @@
 import ReactModal from 'react-modal';
-import useModal from '../../useModal.js';
+import useModal from '../../contextModal/useModal.js';
 import style from './ModalWindow.module.css';
 import Icon from '../Icon/Icon.jsx';
 

@@ -1,4 +1,4 @@
-import { useTheme } from '../../context/ThemeContext.js';
+import useTheme from '../../context/ThemeContext.js';
 import styles from './ThemeImage.module.css';
 
 const ThemedImage = () => {

@@ -1,0 +1,86 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background-color, lightgray);
+  opacity: 0.95;
+  z-index: 999;
+}
+.modalOpen {
+  overflow: hidden;
+}
+.overlay {
+  background-color: rgba(17, 18, 19, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+}
+
+.item {
+  margin: 20px 0;
+}
+
+.link {
+  font-size: 32px;
+  color: var(--black-color);
+  text-decoration: none;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 300px;
+  height: 100%;
+  background: white;
+  transition: left 0.3s;
+}
+
+.menu.open {
+  left: 0;
+}
+
+.active {
+  color: var(--accent-color);
+}
+@media (min-width: 768px) {
+  .modal {
+    display: none;
+  }
+}

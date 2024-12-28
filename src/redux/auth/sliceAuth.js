@@ -4,7 +4,7 @@ import {
   logoutUser,
   refreshUser,
   registerUser,
-} from './operationsAuth.js';
+} from '../auth/operationsAuth.js';
 
 const handlePending = state => {
   state.loading = true;

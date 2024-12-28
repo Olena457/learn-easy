@@ -8,7 +8,7 @@ import {
   startAfter,
   limitToFirst,
 } from 'firebase/database';
-import { auth, database } from '../../config/firebase.js';
+import { auth, database } from '../../firebase/firebaseConfig.js';
 
 // __________________fearch teacher2
 export const fetchTeachers = createAsyncThunk(

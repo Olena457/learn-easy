@@ -7,6 +7,7 @@ import {
 } from '../../redux/teachers/selectorsTeachers.js';
 import TeacherItem from '../TeacherItem/TeacherItem.jsx';
 import styles from './TeachersList.module.css';
+import Loader from './../Loader/Loader';
 const PER_PAGE = 4;
 
 const TeachersList = ({ teachers }) => {
@@ -30,7 +31,7 @@ const TeachersList = ({ teachers }) => {
 
   return (
     <>
-      {loading && <p>Loading...</p>}
+      {loading && <Loader />}
       {error && <p>Error: {error}</p>}
 
       {!loading && teachers?.length > 0 && (

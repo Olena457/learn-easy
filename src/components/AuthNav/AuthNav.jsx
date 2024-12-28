@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
-import useModal from '../../useModal.js';
-import styles from './AuthNav.module.styles';
+import useModal from '../../contextModal/useModal.js';
+import styles from './AuthNav.module.css';
 import logoutIcon from '../../icons/logout.svg';
 import {
   selectIsLoggedIn,
@@ -16,7 +16,7 @@ const AuthNav = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
-  const { modals, openModal, closeModal } = useModal();
+  const { modals, openModal } = useModal();
   return (
     <div className={styles.container}>
       {!isLoggedIn && (

@@ -1,34 +1,67 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
+import { Routes, Route } from 'react-router-dom';
+import { lazy, Suspense, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import 'modern-normalize';
 import './App.css';
+import Layout from './components/Layout/Layout.jsx';
+import { auth } from './firebase/firebaseConfig.js';
+import { refreshUser } from './redux/auth/operationsAuth.js';
+import { selectIsRefreshing } from './redux/auth/selectorsAuth.js';
+import { PrivateRoute } from './components/UserMenu/PrivateRoute.jsx';
+
+import Loader from './components/Loader/Loader.jsx';
+
+const HomePage = lazy(() => import('./pages/HomePage/HomePage.jsx'));
+const TeachersPage = lazy(() =>
+  import('./pages/TeachersPage/TeachersPage.jsx')
+);
+const FavoritesTeachersPage = lazy(() =>
+  import('./pages/FavoritesTeachersPage/FavoritesTeachersPage.jsx')
+);
+
+const NotFoundPage = lazy(() =>
+  import('./pages/NotFoundPage/NotFoundPage.jsx')
+);
 
 function App() {
-  const [count, setCount] = useState(0);
+  const dispatch = useDispatch();
+  const isRefreshing = useSelector(selectIsRefreshing);
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>secsses deploy</h1>
-      <div className="card">
-        <button onClick={() => setCount(count => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged(user => {
+      if (user) {
+        dispatch(refreshUser());
+      }
+    });
+
+    return () => unsubscribe();
+  }, [dispatch]);
+
+  return isRefreshing ? (
+    <Loader />
+  ) : (
+    <Layout>
+      <Suspense fallback={<Loader />}>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/teachers" element={<TeachersPage />} />
+          <Route
+            path="/favorites"
+            element={
+              <PrivateRoute
+                redirectTo="/"
+                component={<FavoritesTeachersPage />}
+              />
+            }
+          />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </Suspense>
+
+      <ToastContainer />
+    </Layout>
   );
 }
 
