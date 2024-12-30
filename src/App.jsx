@@ -10,7 +10,7 @@ import { auth } from './firebase/firebaseConfig.js';
 import { refreshUser } from './redux/auth/operationsAuth.js';
 import { selectIsRefreshing } from './redux/auth/selectorsAuth.js';
 import { PrivateRoute } from './components/UserMenu/PrivateRoute.jsx';
-
+import Modal from 'react-modal';
 import Loader from './components/Loader/Loader.jsx';
 
 const HomePage = lazy(() => import('./pages/HomePage/HomePage.jsx'));
@@ -24,7 +24,7 @@ const FavoritesTeachersPage = lazy(() =>
 const NotFoundPage = lazy(() =>
   import('./pages/NotFoundPage/NotFoundPage.jsx')
 );
-
+Modal.setAppElement('#root');
 function App() {
   const dispatch = useDispatch();
   const isRefreshing = useSelector(selectIsRefreshing);

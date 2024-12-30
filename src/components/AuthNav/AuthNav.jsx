@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import useModal from '../../contextModal/useModal.js';
+import { useState } from 'react';
 import styles from './AuthNav.module.css';
 import logoutIcon from '../../icons/logout.svg';
 import {
@@ -16,38 +16,49 @@ const AuthNav = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
-  const { modals, openModal } = useModal();
+  const [isSignUpOpen, setIsSignUpOpen] = useState(false);
+  const [isSignInOpen, setIsSignInOpen] = useState(false);
+
+  const handleSignUpOpen = () => setIsSignUpOpen(true);
+  const handleSignInOpen = () => setIsSignInOpen(true);
+
+  const handleSignUpClose = () => setIsSignUpOpen(false);
+  const handleSignInClose = () => setIsSignInOpen(false);
+
   return (
     <div className={styles.container}>
       {!isLoggedIn && (
-        <div className={styles.unsignWrapper}>
+        <div className={styles.unWrapper}>
           <button
             type="button"
-            onClick={() => openModal('signIn')}
-            className={styles.buttonLogin}
+            onClick={handleSignInOpen}
+            className={styles.loginButton}
           >
             <img
               src={logoutIcon}
               alt="Logout icon"
               className={styles.logoutIcon}
+              aria-hidden="true"
             />
-            <span className={styles.loginText}>log in</span>
+            <span className={styles.loginText}>Log in</span>
           </button>
+
           <button
             type="button"
-            onClick={() => openModal('signUp')}
+            onClick={handleSignUpOpen}
             className={styles.buttonRegister}
           >
             Registration
           </button>
         </div>
       )}
+
       {isLoggedIn && (
-        <div className={styles.signWrapper}>
+        <div className={styles.sigWrapper}>
           <button
             type="button"
             onClick={() => dispatch(logoutUser())}
-            className={styles.loginButton}
+            className={styles.buttonLogin}
           >
             <img
               src={logoutIcon}
@@ -56,23 +67,26 @@ const AuthNav = () => {
             />
             <span className={styles.loginText}>Log out</span>
           </button>
+
           <div className={styles.buttonRegister}>{user?.name || 'User'}</div>
         </div>
       )}
-      {modals.signUp && (
+
+      {isSignUpOpen && (
         <ModalWindow
-          name="signUp"
-          customClasses={{ overlay: styles.overlay, modal: styles.modal }}
+          onCloseModal={handleSignUpClose}
+          modalIsOpen={isSignUpOpen}
         >
-          <SignUp />
+          <SignUp modalClose={handleSignUpClose} />
         </ModalWindow>
       )}
-      {modals.signIn && (
+
+      {isSignInOpen && (
         <ModalWindow
-          name="signIn"
-          customClasses={{ overlay: styles.overlay, modal: styles.modal }}
+          onCloseModal={handleSignInClose}
+          modalIsOpen={isSignInOpen}
         >
-          <SignIn />
+          <SignIn modalClose={handleSignInClose} />
         </ModalWindow>
       )}
     </div>

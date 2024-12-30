@@ -10,7 +10,7 @@
   line-height: 1.2;
   letter-spacing: -0.02em;
   color: var(--black-color, black);
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .text {
@@ -23,7 +23,7 @@
 .imageWrapper {
   display: flex;
   gap: 14px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .image {
@@ -69,24 +69,28 @@
   font-size: 24px;
   line-height: 1.33333;
   color: var(--black-color, black);
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .radioWrapper {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 15px;
 }
 
 .inputWrapper {
   display: flex;
-  gap: 8px;
+  gap: 6px;
 }
 
-/* .radio {
-  accent-color: blue;
-  border-color: red;
-} */
+.radio {
+  accent-color: transparent;
+  border-color: black;
+}
+
+.radio:checked {
+  accent-color: red;
+}
 
 .input {
   border: 1px solid rgba(18, 20, 23, 0.1);
@@ -112,7 +116,7 @@
   border-radius: 12px;
   width: 268px;
   height: 60px;
-  background-color: var(--primary-color, gold);
+  background-color: #9fb7ce;
   font-weight: 700;
   font-size: 18px;
   line-height: 1.55556;
@@ -135,10 +139,10 @@
 
 @media (min-width: 768px) {
   .container {
-    width: 472px;
+    width: 482px;
   }
 
   .submitBtn {
-    width: 472px;
+    width: 482px;
   }
 }

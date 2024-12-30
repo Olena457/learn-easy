@@ -1,45 +1,37 @@
-import ReactModal from 'react-modal';
-import useModal from '../../contextModal/useModal.js';
+import Modal from 'react-modal';
 import style from './ModalWindow.module.css';
 import Icon from '../Icon/Icon.jsx';
+import { useEffect } from 'react';
 
-const ModalWindow = ({
-  name,
-  children,
-  customStyles = {},
-  customClasses = {},
-}) => {
-  const { modals, closeModal } = useModal();
+const ModalWindow = ({ modalIsOpen, onCloseModal, children }) => {
+  useEffect(() => {
+    document.body.classList.add(style.modalOpen);
+
+    return () => {
+      document.body.classList.remove(style.modalOpen);
+    };
+  }, []);
 
   return (
-    <ReactModal
-      isOpen={!!modals[name]}
-      overlayClassName={`${style.overlay} ${customClasses.overlay || ''}`}
-      className={`${style.modalWindow} ${customClasses.modal || ''}`}
+    <Modal
+      isOpen={modalIsOpen}
+      onRequestClose={onCloseModal}
       shouldCloseOnOverlayClick={true}
-      onRequestClose={() => closeModal(name)}
-      ariaHideApp={false}
-      onAfterOpen={() => (document.body.style.overflow = 'hidden')}
-      onAfterClose={() => (document.body.style.overflow = 'unset')}
-      // style={{
-      //   overlay: {
-      //     backgroundColor: 'rgba(17, 18, 19, 0.4)',
-      //   },
-      // }}
-      style={{ ...customStyles }}
+      shouldCloseOnEsc={true}
+      className={style.modalWindow}
+      style={{
+        overlay: {
+          backgroundColor: 'rgba(17, 18, 19, 0.4)',
+        },
+      }}
     >
-      <div className={`${style.modalContainer} ${customClasses.content || ''}`}>
-        <button
-          className={style.btnClose}
-          type="button"
-          onClick={() => closeModal(name)}
-          aria-label="close modal button"
-        >
+      <div className={style.modalContainer}>
+        <button type="button" onClick={onCloseModal} className={style.btnClose}>
           <Icon id="close" width="32" height="32" />
         </button>
         {children}
       </div>
-    </ReactModal>
+    </Modal>
   );
 };
 

@@ -10,6 +10,7 @@ import ThemeSwitcher from '../ThemeSwitcher/ThemeSwitcher.jsx';
 
 const AppBar = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
+
   const buildActiveClass = ({ isActive }) => {
     return clsx(styles.link, isActive && styles.active);
   };

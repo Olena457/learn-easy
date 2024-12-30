@@ -64,7 +64,7 @@
 
   .list {
     gap: 100px;
-    padding: 40px 122px;
+    padding: 30px 122px;
     flex-wrap: nowrap;
   }
   .numbers {

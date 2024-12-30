@@ -12,8 +12,10 @@
   cursor: pointer;
   transition: transform 0.3s;
 }
-.circle:hover {
+
+.circle:tached {
   transform: scale(1.1);
+  border: 1px solid #94948e;
 }
 .btnBlue {
   background-color: #9fb7ce;
@@ -29,6 +31,12 @@
     width: 18px;
     height: 18px;
   }
+  .circle:hover,
+  .circle.active,
+  .circle:focus {
+    transform: scale(1.1);
+    border: 1px solid #94948e;
+  }
   .themeSwitcher {
     padding-top: 0px;
     gap: 18px;
@@ -38,6 +46,11 @@
   .circle {
     width: 25px;
     height: 25px;
+  }
+  .circle.active,
+  .circle:focus {
+    transform: scale(1.1);
+    border: 1px solid #94948e;
   }
   .themeSwitcher {
     padding-top: 0px;

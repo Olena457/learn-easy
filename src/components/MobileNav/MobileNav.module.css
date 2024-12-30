@@ -1,3 +1,7 @@
+.modalOpen {
+  overflow: hidden;
+}
+
 .modal {
   position: fixed;
   top: 0;
@@ -10,11 +14,9 @@
   justify-content: center;
   background-color: var(--background-color, lightgray);
   opacity: 0.95;
-  z-index: 999;
+  z-index: 1001;
 }
-.modalOpen {
-  overflow: hidden;
-}
+
 .overlay {
   background-color: rgba(17, 18, 19, 0.4);
   position: fixed;
@@ -27,8 +29,8 @@
   visibility: hidden;
   transition: opacity 0.3s, visibility 0.3s;
 }
-
-.overlay.open {
+/* ____________ */
+\.overlay.open {
   opacity: 1;
   visibility: visible;
 }
@@ -45,7 +47,7 @@
 .item {
   margin: 20px 0;
 }
-
+/* _______________________ */
 .link {
   font-size: 32px;
   color: var(--black-color);

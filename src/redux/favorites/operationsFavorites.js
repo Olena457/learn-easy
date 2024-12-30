@@ -67,6 +67,7 @@ export const toggleFavorite = createAsyncThunk(
       }
 
       await set(favoritesRef, favorites);
+
       return Object.keys(favorites);
     } catch (err) {
       return thunkAPI.rejectWithValue(err.message);

@@ -1,6 +1,6 @@
 import css from './TeachersPage.module.css';
 // import teachers from '../data/teachers.json';
-import FiltersBar from '../../components/FiltersBar/FiltersBar.jsx';
+import FilterBar from '../../components/FilterBar/FilterBar.jsx';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   selectTeachers,
@@ -15,13 +15,14 @@ const TeachersPage = () => {
   const teachers = useSelector(selectTeachers);
   const isLoading = useSelector(selectTeachersLoading);
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(fetchTeachers());
   }, [dispatch]);
 
   return (
     <main className={css.main}>
-      <FiltersBar />
+      <FilterBar />
       {isLoading ? <Loader /> : <TeachersList teachers={teachers} />}
     </main>
   );

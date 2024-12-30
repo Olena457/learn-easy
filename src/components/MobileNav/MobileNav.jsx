@@ -1,80 +1,77 @@
 import { useEffect } from 'react';
-import css from './MobileNav.module.css';
-import ReactModal from 'react-modal';
+import styles from './MobileNav.module.css';
+import Modal from 'react-modal';
 import clsx from 'clsx';
 import Icon from '../Icon/Icon.jsx';
 import { useSelector } from 'react-redux';
 import { selectIsLoggedIn } from '../../redux/auth/selectorsAuth.js';
 import { NavLink } from 'react-router-dom';
-import useModal from '../../contextModal/useModal.js';
 
-const MobileNav = ({ name }) => {
+const MobileNav = ({ isOpen, closeModal }) => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
-  const { modals, closeModal } = useModal(); //contecst
+
   useEffect(() => {
-    if (modals[name]) {
-      document.body.classList.add(css.modalOpen);
-    } else {
-      document.body.classList.remove(css.modalOpen);
-    }
+    document.body.classList.add(styles.modalOpen);
 
     return () => {
-      document.body.classList.remove(css.modalOpen);
+      document.body.classList.remove(styles.modalOpen);
     };
-  }, [modals, name]);
+  }, []);
 
-  const buildActiveClass = ({ isActive }) => {
-    return clsx(css.link, isActive && css.active);
+  const buildLinkClass = ({ isActive }) => {
+    return clsx(styles.link, isActive && styles.active);
   };
 
   return (
-    <ReactModal
-      isOpen={modals[name]}
-      onRequestClose={() => closeModal(name)}
-      className={css.modal}
-      overlayClassName={css.overlay}
-      contentLabel="Mobile Menu"
-      ariaHideApp={false}
-    >
-      <button className={css.closeBtn} onClick={() => closeModal(name)}>
-        <Icon id="close" width="32" height="32" ariaHidden={false} />
-      </button>
+    <>
+      <Modal
+        isOpen={isOpen}
+        onRequestClose={closeModal}
+        className={styles.modal}
+        overlayClassName={styles.overlay}
+        contentLabel="Mobile Menu"
+      >
+        <button className={styles.closeBtn} onClick={closeModal}>
+          <Icon id="close" width="32" height="32" ariaHidden={false} />
+        </button>
 
-      <nav className={css.burgerNav}>
-        <ul className={css.list}>
-          <li className={css.item}>
-            <NavLink
-              to="/"
-              className={buildActiveClass}
-              onClick={() => closeModal(name)}
-            >
-              Home
-            </NavLink>
-          </li>
-          <li className={css.item}>
-            <NavLink
-              to="/teachers"
-              className={buildActiveClass}
-              onClick={() => closeModal(name)}
-            >
-              Teachers
-            </NavLink>
-          </li>
-          {isLoggedIn && (
-            <li className={css.item}>
-              <NavLink
-                to="/favorites"
-                className={buildActiveClass}
-                onClick={() => closeModal(name)}
-              >
-                Favorites
+        <nav className={styles.burgerNav}>
+          <ul className={styles.list}>
+            <li className={styles.item}>
+              <NavLink to="/" className={buildLinkClass} onClick={closeModal}>
+                Home
               </NavLink>
             </li>
-          )}
-        </ul>
-      </nav>
-    </ReactModal>
+            <li className={styles.item}>
+              <NavLink
+                to="/teachers"
+                className={buildLinkClass}
+                onClick={closeModal}
+              >
+                Teachers
+              </NavLink>
+            </li>
+            {isLoggedIn && (
+              <li className={styles.item}>
+                <NavLink
+                  to="/favorites"
+                  className={buildLinkClass}
+                  onClick={closeModal}
+                >
+                  Favorites
+                </NavLink>
+              </li>
+            )}
+          </ul>
+        </nav>
+      </Modal>
+    </>
   );
 };
 
 export default MobileNav;
+
+//   return () => {
+//     document.body.classList.remove(css.modalOpen);
+//   };
+// }, []);

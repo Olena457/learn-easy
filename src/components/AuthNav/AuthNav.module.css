@@ -1,9 +1,9 @@
-.loginButton {
+.buttonLogin {
   display: flex;
   align-items: center;
   gap: 8px;
   margin-top: 12px;
-  background-color: var(--accent-color, yellow);
+  background-color: var(--accent-color);
   padding: 14px;
   border-radius: 12px;
 }
@@ -17,8 +17,8 @@
 }
 
 .buttonRegister {
-  color: var(--white-color, white);
-  background-color: var(--black-color, black);
+  color: var(--white-color);
+  background-color: var(--black-color);
   font-weight: 700;
   font-size: 16px;
   line-height: 1.25;
@@ -28,8 +28,8 @@
   width: 122px;
 }
 
-.unsignWrapper,
-.signWrapper {
+.unWrapper,
+.sigWrapper {
   display: flex;
   gap: 8px;
 }
@@ -38,8 +38,8 @@
   .buttonLogin {
     display: flex;
     align-items: center;
-    gap: 8px;
 
+    margin-right: 20px;
     background-color: transparent;
     padding: 0;
     border-radius: 0;
@@ -53,12 +53,12 @@
     text-wrap: nowrap;
   }
 
-  .registerButton {
+  .buttonRegister {
     width: 166px;
   }
 
-  .unsignWrapper,
-  .signWrapper {
-    gap: 16px;
+  .unWrapper,
+  .sigWrapper {
+    gap: 6px;
   }
 }

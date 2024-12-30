@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-
 import {
   selectTeachersError,
   selectTeachersLoading,
 } from '../../redux/teachers/selectorsTeachers.js';
 import TeacherItem from '../TeacherItem/TeacherItem.jsx';
 import styles from './TeachersList.module.css';
-import Loader from './../Loader/Loader';
+import Loader from '../Loader/Loader.jsx';
+
 const PER_PAGE = 4;
 
 const TeachersList = ({ teachers }) => {
@@ -50,7 +50,9 @@ const TeachersList = ({ teachers }) => {
               Load more
             </button>
           )}
-          {!loading && teachers?.length === 0 && <p>No teachers found.</p>}
+          {!loading && teachers?.length === 0 && (
+            <p className={styles.message}>No teachers found.</p>
+          )}
         </>
       )}
     </>

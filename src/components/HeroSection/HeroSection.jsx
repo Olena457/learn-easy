@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import styles from './HeroSection.module.styles';
+import styles from './HeroSection.module.css';
 
 const HeroSection = () => {
   return (

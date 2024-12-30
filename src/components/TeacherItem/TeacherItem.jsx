@@ -17,15 +17,13 @@
 //   const favoriteIndexes = useSelector(selectFavoritesIds);
 
 //   const [isLiked, setLiked] = useState(favoriteIndexes.includes(teacher.id));
-//   const [isModalOpen, setIsModalOpen] = useState(null); // Використання одного стану для керування модальними вікнами
+
+//   const [isBookOpen, setBookOpen] = useState(false);
 
 //   const dispatch = useDispatch();
 
-//   const handleBookOpen = () => {
-//     setIsExpanded(false);
-//     setIsModalOpen('book');
-//   };
-//   const handleModalClose = () => setIsModalOpen(null);
+//   const handleBookOpen = () => setBookOpen(true);
+//   const handleBookClose = () => setBookOpen(false);
 
 //   const toggleReadMore = () => setIsExpanded(!isExpanded);
 
@@ -36,7 +34,7 @@
 //       });
 //     } else {
 //       setLiked(!isLiked);
-//       dispatch(toggleFavorite(teacher.id));
+//       dispatch(toggleFavorite(teacher));
 //     }
 //   };
 
@@ -55,7 +53,6 @@
 //           height={12}
 //           className={styles.onlineIcon}
 //           fillColor="#38cd3e"
-//           ariaHidden={true}
 //         />
 //       </div>
 
@@ -86,18 +83,16 @@
 //                   height={16}
 //                   className={styles.starIcon}
 //                   fillColor="#ffc531"
-//                   ariaHidden={true}
 //                 />
 //                 <p className={styles.lessonsText}>{`Rating: 4.8`}</p>
 //               </div>
 
 //               <p className={styles.lessonsText}>
 //                 Price / 1 hour:{' '}
-//                 <span className={styles.price}>
-//                   {teacher['price_per_hour']}$
-//                 </span>
+//                 <span className={styles.price}>{teacher.price_per_hour}$</span>
 //               </p>
 //             </div>
+
 //             <button type="button" onClick={handleLike}>
 //               {isLiked ? (
 //                 <Icon
@@ -119,13 +114,16 @@
 //                 />
 //               )}
 //             </button>
+//             {/*  */}
 //           </div>
 //         </div>
 
 //         <div className={styles.teacherInfo}>
 //           <p className={styles.criterion}>
 //             Speaks:{' '}
-//             <span className={styles.criterionLang}>{teacher.languages}</span>
+//             <span className={styles.criterionLang}>
+//               {teacher.languages.join(', ')}
+//             </span>
 //           </p>
 
 //           <p className={styles.criterion}>
@@ -137,7 +135,9 @@
 
 //           <p className={styles.criterion}>
 //             Conditions:{' '}
-//             <span className={styles.criterionText}>{teacher.conditions}</span>
+//             <span className={styles.criterionText}>
+//               {teacher.conditions.join(' ')}
+//             </span>
 //           </p>
 //         </div>
 
@@ -153,21 +153,6 @@
 
 //         {isExpanded && (
 //           <div className="more-info">
-//             <button
-//               type="button"
-//               onClick={toggleReadMore}
-//               className={styles.closeIconBtn}
-//               aria-label="Close additional information"
-//             >
-//               <Icon
-//                 id="close"
-//                 width={26}
-//                 height={26}
-//                 className={styles.closeIcon}
-//                 fillColor="#0000"
-//                 ariaHidden={false}
-//               />
-//             </button>
 //             <p className={styles.experienceText}>{teacher.experience}</p>
 
 //             <ul className={styles.reviewsList}>
@@ -179,10 +164,12 @@
 //                       alt="avatar"
 //                       className={styles.reviewAvatar}
 //                     />
+
 //                     <div className={styles.iconReviewNameWrapper}>
 //                       <p className={styles.reviewName}>
 //                         {review['reviewer_name']}
 //                       </p>
+
 //                       <div className={styles.reviewStarWrapper}>
 //                         <Icon
 //                           id="star"
@@ -190,7 +177,9 @@
 //                           height={16}
 //                           className={styles.starIcon}
 //                           fillColor="#ffc531"
+//                           ariaHidden={false}
 //                         />
+
 //                         {parseInt(review['reviewer_rating']).toFixed(1)}
 //                       </div>
 //                     </div>
@@ -203,17 +192,11 @@
 //         )}
 
 //         <ul className={styles.levelsList}>
-//           {' '}
-//           {typeof teacher.levels === 'string' ? (
-//             teacher.levels.split(',').map((level, id) => (
-//               <li key={id} className={styles.levelsItem}>
-//                 {' '}
-//                 #{level.trim()}{' '}
-//               </li>
-//             ))
-//           ) : (
-//             <li className={styles.levelsItem}>No levels specified</li>
-//           )}{' '}
+//           {teacher.levels.map((level, id) => (
+//             <li key={id} className={styles.levelsItem}>
+//               #{level}
+//             </li>
+//           ))}
 //         </ul>
 
 //         {isExpanded && (
@@ -226,12 +209,9 @@
 //           </button>
 //         )}
 
-//         {isModalOpen === 'book' && (
-//           <ModalWindow
-//             onCloseModal={handleModalClose}
-//             modalIsOpen={isModalOpen === 'book'}
-//           >
-//             <BookModal modalClose={handleModalClose} teacher={teacher} />
+//         {isBookOpen && (
+//           <ModalWindow onCloseModal={handleBookClose} modalIsOpen={isBookOpen}>
+//             <BookModal modalClose={handleBookClose} teacher={teacher} />
 //           </ModalWindow>
 //         )}
 //       </section>
@@ -252,21 +232,19 @@ import book from '../../icons/book.svg';
 import defaultAvatar from '../../icons/user.svg';
 import ModalWindow from '../ModalWindow/ModalWindow.jsx';
 import BookModal from '../BookModal/BookModal.jsx';
-import useModal from '../../contextModal/useModal.js';
 
 const TeacherItem = ({ teacher }) => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const [isExpanded, setIsExpanded] = useState(false);
   const favoriteIndexes = useSelector(selectFavoritesIds);
+
   const [isLiked, setLiked] = useState(favoriteIndexes.includes(teacher.id));
-  const { modals, openModal, closeModal } = useModal();
+  const [isBookOpen, setBookOpen] = useState(false);
 
   const dispatch = useDispatch();
 
-  const handleBookOpen = () => {
-    setIsExpanded(false);
-    openModal('book');
-  };
+  const handleBookOpen = () => setBookOpen(true);
+  const handleBookClose = () => setBookOpen(false);
 
   const toggleReadMore = () => setIsExpanded(!isExpanded);
 
@@ -277,7 +255,7 @@ const TeacherItem = ({ teacher }) => {
       });
     } else {
       setLiked(!isLiked);
-      dispatch(toggleFavorite(teacher.id));
+      dispatch(toggleFavorite(teacher));
     }
   };
 
@@ -285,7 +263,7 @@ const TeacherItem = ({ teacher }) => {
     <li className={styles.item}>
       <div className={styles.circle}>
         <img
-          src={teacher['avatar_url']}
+          src={teacher.avatar_url}
           alt={`${teacher.name} ${teacher.surname}`}
           className={styles.avatar}
         />
@@ -295,7 +273,6 @@ const TeacherItem = ({ teacher }) => {
           height={12}
           className={styles.onlineIcon}
           fillColor="#38cd3e"
-          ariaHidden={true}
         />
       </div>
 
@@ -315,7 +292,7 @@ const TeacherItem = ({ teacher }) => {
                 <p className={styles.lessonsText}>Lessons online</p>
               </div>
               <p className={styles.lessonsText}>
-                {`Lessons done: ${teacher['lessons_done']}`}
+                {`Lessons done: ${teacher.lessons_done}`}
               </p>
               <div className={styles.ratingWrapper}>
                 <Icon
@@ -330,9 +307,7 @@ const TeacherItem = ({ teacher }) => {
               </div>
               <p className={styles.lessonsText}>
                 Price / 1 hour:{' '}
-                <span className={styles.price}>
-                  {teacher['price_per_hour']}$
-                </span>
+                <span className={styles.price}>{teacher.price_per_hour}$</span>
               </p>
             </div>
             <button type="button" onClick={handleLike}>
@@ -362,17 +337,19 @@ const TeacherItem = ({ teacher }) => {
         <div className={styles.teacherInfo}>
           <p className={styles.criterion}>
             Speaks:{' '}
-            <span className={styles.criterionLang}>{teacher.languages}</span>
-          </p>
-          <p className={styles.criterion}>
-            Lesson Info:{' '}
-            <span className={styles.criterionText}>
-              {teacher['lesson_info']}
+            <span className={styles.criterionLang}>
+              {teacher.languages.join(', ')}
             </span>
           </p>
           <p className={styles.criterion}>
+            Lesson Info:{' '}
+            <span className={styles.criterionText}>{teacher.lesson_info}</span>
+          </p>
+          <p className={styles.criterion}>
             Conditions:{' '}
-            <span className={styles.criterionText}>{teacher.conditions}</span>
+            <span className={styles.criterionText}>
+              {teacher.conditions.join(', ')}
+            </span>
           </p>
         </div>
 
@@ -392,16 +369,17 @@ const TeacherItem = ({ teacher }) => {
               type="button"
               onClick={toggleReadMore}
               className={styles.closeIconBtn}
-              aria-label="Close additional information"
+              aria-label="Close accordion"
             >
               <Icon
-                id="close"
-                width={26}
-                height={26}
-                className={styles.closeIcon}
-                fillColor="#0000"
+                id="arrow"
+                width={16}
+                height={16}
+                className={styles.arrowIcon}
+                fillColor="#38cd3e"
                 ariaHidden={false}
               />
+              <span className={styles.closeText}>close</span>
             </button>
             <p className={styles.experienceText}>{teacher.experience}</p>
 
@@ -413,10 +391,11 @@ const TeacherItem = ({ teacher }) => {
                       src={defaultAvatar}
                       alt="avatar"
                       className={styles.reviewAvatar}
+                      aria-hidden="true"
                     />
                     <div className={styles.iconReviewNameWrapper}>
                       <p className={styles.reviewName}>
-                        {review['reviewer_name']}
+                        {review.reviewer_name}
                       </p>
                       <div className={styles.reviewStarWrapper}>
                         <Icon
@@ -425,8 +404,9 @@ const TeacherItem = ({ teacher }) => {
                           height={16}
                           className={styles.starIcon}
                           fillColor="#ffc531"
+                          ariaHidden={false}
                         />
-                        {parseInt(review['reviewer_rating']).toFixed(1)}
+                        {parseInt(review.reviewer_rating).toFixed(1)}
                       </div>
                     </div>
                   </div>
@@ -438,15 +418,11 @@ const TeacherItem = ({ teacher }) => {
         )}
 
         <ul className={styles.levelsList}>
-          {typeof teacher.levels === 'string' ? (
-            teacher.levels.split(',').map((level, id) => (
-              <li key={id} className={styles.levelsItem}>
-                #{level.trim()}{' '}
-              </li>
-            ))
-          ) : (
-            <li className={styles.levelsItem}>No levels specified</li>
-          )}
+          {teacher.levels.map((level, id) => (
+            <li key={id} className={styles.levelsItem}>
+              #{level}
+            </li>
+          ))}
         </ul>
 
         {isExpanded && (
@@ -459,15 +435,9 @@ const TeacherItem = ({ teacher }) => {
           </button>
         )}
 
-        {modals.book && (
-          <ModalWindow
-            name="book"
-            customClasses={{ overlay: styles.overlay, modal: styles.modal }}
-          >
-            <BookModal
-              modalClose={() => closeModal('book')}
-              teacher={teacher}
-            />
+        {isBookOpen && (
+          <ModalWindow onCloseModal={handleBookClose} modalIsOpen={isBookOpen}>
+            <BookModal modalClose={handleBookClose} teacher={teacher} />
           </ModalWindow>
         )}
       </section>
