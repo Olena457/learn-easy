@@ -391,7 +391,6 @@ const TeacherItem = ({ teacher }) => {
                       src={defaultAvatar}
                       alt="avatar"
                       className={styles.reviewAvatar}
-                      aria-hidden="true"
                     />
                     <div className={styles.iconReviewNameWrapper}>
                       <p className={styles.reviewName}>

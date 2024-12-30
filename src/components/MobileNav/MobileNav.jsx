@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import styles from './MobileNav.module.css';
-import Modal from 'react-modal';
 import clsx from 'clsx';
+import Modal from 'react-modal';
 import Icon from '../Icon/Icon.jsx';
 import { useSelector } from 'react-redux';
 import { selectIsLoggedIn } from '../../redux/auth/selectorsAuth.js';
@@ -32,7 +32,7 @@ const MobileNav = ({ isOpen, closeModal }) => {
         contentLabel="Mobile Menu"
       >
         <button className={styles.closeBtn} onClick={closeModal}>
-          <Icon id="close" width="32" height="32" ariaHidden={false} />
+          <Icon id="close" width="32" height="32" />
         </button>
 
         <nav className={styles.burgerNav}>
@@ -70,8 +70,3 @@ const MobileNav = ({ isOpen, closeModal }) => {
 };
 
 export default MobileNav;
-
-//   return () => {
-//     document.body.classList.remove(css.modalOpen);
-//   };
-// }, []);
