@@ -73,7 +73,7 @@
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
-  color: var(--gray-color, gray);
+  color: var(--dark-gray-color, rgb(118, 116, 116));
 }
 
 .criterionLang {
@@ -92,6 +92,7 @@
 
 .readMoreBtn {
   font-weight: 500;
+  margin-right: auto;
   font-size: 16px;
   line-height: 1.5;
   text-decoration: underline;
@@ -185,7 +186,7 @@
   margin-top: 32px;
   border-radius: 12px;
   padding: 16px 48px;
-  background: var(--accent-color, goldenrod);
+  background: var(--accent-color);
   font-weight: 700;
   font-size: 18px;
   line-height: 1.55556;
@@ -232,7 +233,7 @@
     font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
-    color: var(--gray-color, gray);
+    color: var(--dark-gray-color, #a9a9a9);
     margin-bottom: 8px;
   }
 
@@ -261,6 +262,7 @@
   }
 
   .bookImg {
+    margin-left: 5px;
     width: 16px;
     height: 16px;
   }

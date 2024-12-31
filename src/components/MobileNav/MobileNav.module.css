@@ -42,7 +42,7 @@
 }
 
 .active {
-  color: var(--accent-color, #9fb7ce);
+  color: red;
 }
 @media (min-width: 768px) {
   .modal {

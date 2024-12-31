@@ -2,8 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { auth, database } from '../../firebase/firebaseConfig.js';
 import { get, ref, set } from 'firebase/database';
 
-// ___________________register user 1 variant
-
+//_______________ Fetch favorites
 export const fetchFavorites = createAsyncThunk(
   'favorites/fetchFavorites',
   async (_, thunkAPI) => {
@@ -11,8 +10,9 @@ export const fetchFavorites = createAsyncThunk(
       const user = auth.currentUser;
 
       if (!user) {
-        return thunkAPI.rejectWithValue('Is not authenticated');
+        return thunkAPI.rejectWithValue('User is not authenticated');
       }
+
       const favoritesRef = ref(database, `users/${user.uid}/favorites`);
       const snapshot = await get(favoritesRef);
 
@@ -37,38 +37,42 @@ export const fetchFavorites = createAsyncThunk(
   }
 );
 
-// ___________________logout user+ get favorites + set to fitebase 3in 1
-
+//_______________________ Toggle favorite
 export const toggleFavorite = createAsyncThunk(
   'favorites/toggleFavorite',
-  async (teacherId, thunkAPI) => {
+  async (teacher, thunkAPI) => {
     try {
       const user = auth.currentUser;
+
       if (!user) {
-        return thunkAPI.rejectWithValue('Is not authenticated');
+        return thunkAPI.rejectWithValue('User is not authenticated');
       }
+
       const favoritesRef = ref(database, `users/${user.uid}/favorites`);
       const snapshot = await get(favoritesRef);
 
       let favorites = {};
       if (snapshot.exists()) {
-        const data = snapshot.val();
-        if (typeof data === 'object' && data !== null) {
-          favorites = data;
-        } else {
-          throw new Error('Data format is not correct');
-        }
+        favorites = snapshot.val();
       }
 
-      if (favorites[teacherId]) {
-        delete favorites[teacherId];
+      if (favorites[teacher.id]) {
+        delete favorites[teacher.id];
       } else {
-        favorites[teacherId] = true;
+        favorites[teacher.id] = true;
       }
 
       await set(favoritesRef, favorites);
 
-      return Object.keys(favorites);
+      const updatedFavoritesIds = Object.keys(favorites);
+      const teacherPromises = updatedFavoritesIds.map(async id => {
+        const teacherRef = ref(database, `teachers/${id}`);
+        const teacherSnapshot = await get(teacherRef);
+        return { id, ...teacherSnapshot.val() };
+      });
+
+      const updatedFavoritesArray = await Promise.all(teacherPromises);
+      return updatedFavoritesArray;
     } catch (err) {
       return thunkAPI.rejectWithValue(err.message);
     }

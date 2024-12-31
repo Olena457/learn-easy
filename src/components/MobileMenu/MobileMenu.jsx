@@ -8,7 +8,12 @@ import Icon from '../Icon/Icon.jsx';
 const MobileMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const openModal = () => setIsOpen(true);
+  // const openModal = () => setIsOpen(true);
+  const openModal = () => {
+    setTimeout(() => {
+      setIsOpen(true);
+    }, 300);
+  };
   const closeModal = () => setIsOpen(false);
 
   return (

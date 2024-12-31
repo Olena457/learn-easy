@@ -31,21 +31,21 @@ const favoritesSlice = createSlice({
   },
   extraReducers: builder => {
     builder
-      //_____________fetch favorites teacher
+      // Fetch favorites
       .addCase(fetchFavorites.pending, handlePending)
       .addCase(fetchFavorites.fulfilled, (state, action) => {
         state.items = action.payload;
         state.loading = false;
       })
       .addCase(fetchFavorites.rejected, handleRejected)
-      //____________toggle favorite teacher
+      // Toggle favorite
       .addCase(toggleFavorite.pending, handlePending)
       .addCase(toggleFavorite.fulfilled, (state, action) => {
         state.items = action.payload;
         state.loading = false;
       })
       .addCase(toggleFavorite.rejected, handleRejected)
-      //_______________logout
+      // Logout
       .addCase(logoutUser.fulfilled, () => favoritesInitialState);
   },
 });

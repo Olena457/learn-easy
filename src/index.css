@@ -1,12 +1,10 @@
 :root {
-  /* --background-color: #cce5ff;
-  --laptop-color: #007bff;
-  --hair-color: #000000; */
   --black-color: #121417;
   --green-color: #38cd3e;
   --white-color: #fff;
   --lightgray-color: #f8f8f8;
-  --gray-color: #b7b7b2;
+  --gray-color: #dcd9d9;
+  --dark-gray-color: #a9a9a9;
 }
 [data-theme='blue'] {
   --accent-color: #9fb7ce;
@@ -38,7 +36,7 @@ body {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-style: normal;
-  background-color: var(--lightgray-color, #f8f8f8);
+  background-color: var(--gray-color, #dcd9d9);
 }
 
 h1,

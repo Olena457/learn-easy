@@ -1,18 +1,18 @@
-// import { createSelector } from '@reduxjs/toolkit';
+import { createSelector } from '@reduxjs/toolkit';
 
-// export const selectFilters = state => state.filters;
+export const selectFilters = state => state.filters;
 
-// export const selectLanguages = createSelector(
-//   [selectFilters],
-//   filters => filters.languages
-// );
+export const selectLanguages = createSelector(
+  [selectFilters],
+  filters => filters.languages
+);
 
-// export const selectLevels = createSelector(
-//   [selectFilters],
-//   filters => filters.levels
-// );
+export const selectLevels = createSelector(
+  [selectFilters],
+  filters => filters.levels
+);
 
-// export const selectPrices = createSelector(
-//   [selectFilters],
-//   filters => filters.prices
-// );
+export const selectPrices = createSelector(
+  [selectFilters],
+  filters => filters.prices
+);
