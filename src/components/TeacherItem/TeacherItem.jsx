@@ -21,19 +21,11 @@ const TeacherItem = ({ teacher }) => {
   const [isBookOpen, setBookOpen] = useState(false);
 
   const dispatch = useDispatch();
-  //__________________________
-  const handleBookOpen = () => {
-    if (!isBookOpen) {
-      setBookOpen(true);
-    }
-  };
-  const handleBookClose = () => setBookOpen(false);
-  const toggleReadMore = () => setIsExpanded(!isExpanded);
-  //_______________
-  //  const handleBookOpen = () => setBookOpen(true);
-  //  const handleBookClose = () => setBookOpen(false);
 
-  //  const toggleReadMore = () => setIsExpanded(!isExpanded);
+  const handleBookOpen = () => setBookOpen(true);
+  const handleBookClose = () => setBookOpen(false);
+
+  const toggleReadMore = () => setIsExpanded(!isExpanded);
 
   const handleLike = () => {
     if (!isLoggedIn) {
