@@ -1,16 +1,16 @@
 .imageContainer {
-  min-width: 285px;
-  min-height: 482px;
-  margin: 24px 0px 24px 0px;
+  display: flex;
   border-radius: 30px;
-  background-image: var(--theme-image);
-  background-size: cover;
-  background-position: center;
+  min-width: 285px;
+  height: 482px;
+  margin: 24px 0px 24px 0px;
+  overflow: hidden;
 }
+
 @media (min-width: 768px) {
   .imageContainer {
     margin: 0px 0px 24px 0px;
-    min-height: 450px;
+    height: 450px;
     min-width: 310px;
   }
 }

@@ -21,11 +21,19 @@ const TeacherItem = ({ teacher }) => {
   const [isBookOpen, setBookOpen] = useState(false);
 
   const dispatch = useDispatch();
-
-  const handleBookOpen = () => setBookOpen(true);
+  //__________________________
+  const handleBookOpen = () => {
+    if (!isBookOpen) {
+      setBookOpen(true);
+    }
+  };
   const handleBookClose = () => setBookOpen(false);
-
   const toggleReadMore = () => setIsExpanded(!isExpanded);
+  //_______________
+  //  const handleBookOpen = () => setBookOpen(true);
+  //  const handleBookClose = () => setBookOpen(false);
+
+  //  const toggleReadMore = () => setIsExpanded(!isExpanded);
 
   const handleLike = () => {
     if (!isLoggedIn) {
@@ -53,7 +61,7 @@ const TeacherItem = ({ teacher }) => {
           height={12}
           className={styles.onlineIcon}
           fillColor="#38cd3e"
-          ariaHidden={false}
+          ariaHidden={undefined}
         />
       </div>
 
@@ -84,7 +92,7 @@ const TeacherItem = ({ teacher }) => {
                   height={16}
                   className={styles.starIcon}
                   fillColor="#ffc531"
-                  ariaHidden={false}
+                  ariaHidden={undefined}
                 />
                 <p className={styles.lessonsText}>{`Rating: 4.8`}</p>
               </div>
@@ -102,7 +110,7 @@ const TeacherItem = ({ teacher }) => {
                   height={26}
                   className={styles.heartIcon}
                   fillColor="#f00b0b"
-                  ariaHidden={false}
+                  ariaHidden={undefined}
                 />
               ) : (
                 <Icon
@@ -111,7 +119,7 @@ const TeacherItem = ({ teacher }) => {
                   height={26}
                   className={styles.heartIcon}
                   fillColor="#121417"
-                  ariaHidden={false}
+                  ariaHidden={undefined}
                 />
               )}
             </button>
@@ -170,7 +178,7 @@ const TeacherItem = ({ teacher }) => {
                 height={16}
                 className={styles.arrowIcon}
                 fillColor="#38cd3e"
-                ariaHidden={false}
+                ariaHidden={undefined}
               />
               <span className={styles.closeText}>close</span>
             </button>
@@ -199,7 +207,7 @@ const TeacherItem = ({ teacher }) => {
                           height={16}
                           className={styles.starIcon}
                           fillColor="#ffc531"
-                          ariaHidden={false}
+                          ariaHidden={undefined}
                         />
 
                         {parseInt(review['reviewer_rating']).toFixed(1)}

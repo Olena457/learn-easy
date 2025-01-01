@@ -23,7 +23,7 @@ const bookSchema = yup.object({
     .required('Phone number is required!')
     .matches(
       phoneNumberRegExp,
-      'Phone number must follow the format +XX XXXXX XXXXX. May contain hyphens and spaces. '
+      'The phone number format +XX XXXXX XXXXX. Must contain hyphens and spaces.'
     ),
 });
 

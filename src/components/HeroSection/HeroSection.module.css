@@ -1,7 +1,7 @@
 .section {
   border-radius: 30px;
   padding: 24px;
-  max-width: 320px;
+  min-width: 285px;
 
   background: var(--lightgray-color, gray);
 }
@@ -58,7 +58,7 @@
 }
 @media (min-width: 1440px) {
   .section {
-    max-width: unset;
+    /* max-width: unset; */
     width: 720px;
     padding: 98px 64px;
   }

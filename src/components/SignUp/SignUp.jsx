@@ -113,7 +113,12 @@ const SignUp = ({ modalClose }) => {
             className={styles.eyeBtn}
           >
             {isPassword ? (
-              <img src={eyeIcon} alt="eye" className="eye" aria-hidden="true" />
+              <img
+                src={eyeIcon}
+                alt="eye"
+                className="eye"
+                aria-hidden="undefined"
+              />
             ) : (
               <Icon
                 id="eye"
@@ -121,7 +126,7 @@ const SignUp = ({ modalClose }) => {
                 height={20}
                 className={styles.eye}
                 fillColor="#121417"
-                ariaHidden="true"
+                ariaHidden="undefined"
               />
             )}
           </button>

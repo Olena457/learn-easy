@@ -11,7 +11,7 @@
   --secondary-color: #bfd6ea;
   --hover-color: #afc7dc;
   --background-color: #eeeeee;
-  --theme-image: url(../src/image/blue-theme.jpg);
+  /* --theme-image: url(../src/image/blue-theme.jpg); */
 }
 
 [data-theme='yellow'] {
@@ -19,7 +19,7 @@
   --secondary-color: #fbe9ba;
   --hover-color: #ffdc86;
   --background-color: #fffaf0;
-  --theme-image: url(../src/image/yellow-theme.jpg);
+  /* --theme-image: url(../src/image/yellow-theme.jpg); */
 }
 
 [data-theme='red'] {
@@ -27,7 +27,7 @@
   --secondary-color: #f2c0bd;
   --hover-color: #f7b3b3;
   --background-color: #ffefef;
-  --theme-image: url(../src/image/red-theme.jpg);
+  /* --theme-image: url(../src/image/red-theme.jpg); */
 }
 body {
   /* margin: 0;
