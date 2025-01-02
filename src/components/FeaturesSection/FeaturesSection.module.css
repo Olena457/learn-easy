@@ -1,7 +1,7 @@
 .section {
   border: 2px dashed var(--accent-color);
   border-radius: 30px;
-  min-width: 320px;
+  min-width: 285px;
   margin-bottom: 24px;
   margin-left: auto;
   margin-right: auto;
@@ -36,9 +36,9 @@
 }
 
 @media (min-width: 768px) {
-  .display {
+  /* .section {
     max-width: unset;
-  }
+  } */
 
   .list {
     flex-direction: row;
@@ -57,7 +57,7 @@
 }
 
 @media (min-width: 1440px) {
-  .display {
+  .section {
     width: 1312px;
     height: 116px;
   }
