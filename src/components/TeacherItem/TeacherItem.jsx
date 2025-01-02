@@ -152,6 +152,7 @@ const TeacherItem = ({ teacher }) => {
             type="button"
             onClick={toggleReadMore}
             className={styles.readMoreBtn}
+            aria-expanded={isExpanded}
           >
             Read more
           </button>

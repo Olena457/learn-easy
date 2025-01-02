@@ -1,7 +1,8 @@
 import styles from './HomePage.module.css';
-import HeroSection from '../../components/HeroSection/HeroSection.jsx';
-import FeaturesSection from '../../components/FeaturesSection/FeaturesSection.jsx';
-import ThemedImage from '../../components/ThemedImage/ThemedImage.jsx';
+import FeaturesSection from '../../components/FeaturesSection/FeaturesSection';
+import ThemedImage from '../../components/ThemedImage/ThemedImage';
+import HeroSection from '../../components/HeroSection/HeroSection';
+
 const HomePage = () => {
   return (
     <main className={styles.main}>
@@ -13,5 +14,10 @@ const HomePage = () => {
     </main>
   );
 };
-
 export default HomePage;
+//  future={{
+//         v7_startTransition: true,
+//         v7_relativeSplatPath: true,
+//         v7_normalizeFormMethod: true,
+//         v7_routerProviderHydration: true,
+//       }}
