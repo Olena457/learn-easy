@@ -9,10 +9,9 @@ const MobileMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const openModal = () => {
-    setTimeout(() => {
-      setIsOpen(true);
-    }, 300);
+    setIsOpen(true);
   };
+
   const closeModal = () => setIsOpen(false);
 
   return (
