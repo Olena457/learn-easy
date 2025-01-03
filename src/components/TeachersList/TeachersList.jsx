@@ -32,11 +32,11 @@ const TeachersList = ({ teachers }) => {
   return (
     <>
       {loading && <Loader />}
-      {error && <p>Error: {error}</p>}
+      {error && <p role="alert">Error: {error}</p>}
 
       {!loading && teachers?.length > 0 && (
         <>
-          <ul className={styles.list}>
+          <ul className={styles.list} aria-live="polite" aria-atomic="true">
             {visibleTeachers.map(teacher => (
               <TeacherItem key={teacher.id} teacher={teacher} />
             ))}
@@ -46,6 +46,7 @@ const TeachersList = ({ teachers }) => {
               className={styles.moreBtn}
               type="button"
               onClick={handleShowMore}
+              aria-label="Load more teachers"
             >
               Load more
             </button>

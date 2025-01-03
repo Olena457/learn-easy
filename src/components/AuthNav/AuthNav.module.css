@@ -1,9 +1,9 @@
-.buttonLogin {
+.loginButton {
   display: flex;
   align-items: center;
   gap: 8px;
   margin-top: 12px;
-  background-color: var(--accent-color);
+  color: var(--black-color);
   padding: 14px;
   border-radius: 12px;
 }
@@ -35,10 +35,9 @@
 }
 
 @media (min-width: 768px) {
-  .buttonLogin {
+  .loginButton {
     display: flex;
     align-items: center;
-
     margin-right: 20px;
     background-color: transparent;
     padding: 0;

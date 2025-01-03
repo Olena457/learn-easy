@@ -53,7 +53,6 @@ const TeacherItem = ({ teacher }) => {
           height={12}
           className={styles.onlineIcon}
           fillColor="#38cd3e"
-          ariaHidden={undefined}
         />
       </div>
 
@@ -84,7 +83,6 @@ const TeacherItem = ({ teacher }) => {
                   height={16}
                   className={styles.starIcon}
                   fillColor="#ffc531"
-                  ariaHidden={undefined}
                 />
                 <p className={styles.lessonsText}>{`Rating: 4.8`}</p>
               </div>
@@ -102,7 +100,7 @@ const TeacherItem = ({ teacher }) => {
                   height={26}
                   className={styles.heartIcon}
                   fillColor="#f00b0b"
-                  ariaHidden={undefined}
+                  role="button"
                 />
               ) : (
                 <Icon
@@ -111,7 +109,7 @@ const TeacherItem = ({ teacher }) => {
                   height={26}
                   className={styles.heartIcon}
                   fillColor="#121417"
-                  ariaHidden={undefined}
+                  role="button"
                 />
               )}
             </button>
@@ -171,7 +169,7 @@ const TeacherItem = ({ teacher }) => {
                 height={16}
                 className={styles.arrowIcon}
                 fillColor="#38cd3e"
-                ariaHidden={undefined}
+                role="button"
               />
               <span className={styles.closeText}>close</span>
             </button>
@@ -184,7 +182,7 @@ const TeacherItem = ({ teacher }) => {
                   <div className={styles.iconReviewWrapper}>
                     <img
                       src={defaultAvatar}
-                      alt="avatar"
+                      alt="user avatar"
                       className={styles.reviewAvatar}
                     />
 
@@ -200,7 +198,6 @@ const TeacherItem = ({ teacher }) => {
                           height={16}
                           className={styles.starIcon}
                           fillColor="#ffc531"
-                          ariaHidden={undefined}
                         />
 
                         {parseInt(review['reviewer_rating']).toFixed(1)}

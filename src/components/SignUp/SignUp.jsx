@@ -71,54 +71,70 @@ const SignUp = ({ modalClose }) => {
 
   return (
     <div className={styles.container}>
-      <h2 className={styles.title}>Registration</h2>
-      <p className={styles.text}>
+      <h2 className={styles.title} id="sign-up-title">
+        Registration
+      </h2>
+      <p className={styles.text} id="sign-up-description">
         Thank you for your interest in our platform! In order to register, we
         need some information. Please provide us with the following information
       </p>
 
-      <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className={styles.form}
+        aria-labelledby="sign-up-title"
+        aria-describedby="sign-up-description"
+      >
         <div className={styles.nameWrapper}>
+          <label htmlFor={nameId} className={styles.label}>
+            Name
+          </label>
           <input
             id={nameId}
             {...register('name')}
             placeholder="Name"
             className={clsx(styles.input, styles.name)}
+            aria-required="true"
           />
           <p className={styles.errorText}>{errors.name?.message}</p>
         </div>
 
         <div className={styles.emailWrapper}>
+          <label htmlFor={emailId} className={styles.label}>
+            Email
+          </label>
           <input
             id={emailId}
             {...register('email')}
             placeholder="Email"
             className={clsx(styles.input, styles.email)}
+            autoComplete="email"
+            aria-required="true"
           />
           <p className={styles.errorText}>{errors.email?.message}</p>
         </div>
 
         <div className={styles.passwordWrapper}>
+          <label htmlFor={passwordId} className={styles.label}>
+            Password
+          </label>
           <input
             id={passwordId}
             type={isPassword ? 'password' : 'text'}
             {...register('password', { required: true })}
             placeholder="Password"
             className={clsx(styles.input, styles.password)}
+            autoComplete="current-password"
+            aria-required="true"
           />
-
           <button
             type="button"
             onClick={togglePassword}
             className={styles.eyeBtn}
+            aria-label={isPassword ? 'Show password' : 'Hide password'}
           >
             {isPassword ? (
-              <img
-                src={eyeIcon}
-                alt="eye"
-                className="eye"
-                aria-hidden="undefined"
-              />
+              <img src={eyeIcon} alt="eye icon" className="eye" />
             ) : (
               <Icon
                 id="eye"
@@ -126,7 +142,6 @@ const SignUp = ({ modalClose }) => {
                 height={20}
                 className={styles.eye}
                 fillColor="#121417"
-                ariaHidden="undefined"
               />
             )}
           </button>

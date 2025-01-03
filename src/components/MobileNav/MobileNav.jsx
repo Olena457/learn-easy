@@ -30,15 +30,26 @@ const MobileNav = ({ isOpen, closeModal }) => {
         className={styles.modal}
         overlayClassName={styles.overlay}
         contentLabel="Mobile Menu"
+        ariaHideApp={undefined}
       >
-        <button type="button" className={styles.closeBtn} onClick={closeModal}>
-          <Icon id="close" width="32" height="32" ariaHidden={undefined} />
+        <button
+          type="button"
+          className={styles.closeBtn}
+          onClick={closeModal}
+          aria-label="Close menu"
+        >
+          <Icon id="close" width="32" height="32" role="button" />
         </button>
 
         <nav className={styles.burgerNav}>
           <ul className={styles.list}>
             <li className={styles.item}>
-              <NavLink to="/" className={buildLinkClass} onClick={closeModal}>
+              <NavLink
+                to="/"
+                className={buildLinkClass}
+                onClick={closeModal}
+                aria-label="Home"
+              >
                 Home
               </NavLink>
             </li>
@@ -47,6 +58,7 @@ const MobileNav = ({ isOpen, closeModal }) => {
                 to="/teachers"
                 className={buildLinkClass}
                 onClick={closeModal}
+                aria-label="Teachers"
               >
                 Teachers
               </NavLink>
@@ -57,6 +69,7 @@ const MobileNav = ({ isOpen, closeModal }) => {
                   to="/favorites"
                   className={buildLinkClass}
                   onClick={closeModal}
+                  aria-label="Favorites"
                 >
                   Favorites
                 </NavLink>

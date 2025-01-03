@@ -2,6 +2,9 @@
   max-width: 320px;
   margin: 0 8px 32px;
 }
+.hidden {
+  display: none;
+}
 
 .list {
   display: flex;
@@ -32,22 +35,7 @@
   color: var(--black-color, black);
   border: none;
 }
-/* ________________________________ */
-.searchBtn {
-  display: block;
-  margin-top: 20px;
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-}
 
-.searchBtn:hover {
-  background-color: #0056b3;
-}
-/* _________________________________ */
 @media (min-width: 768px) {
   .container {
     width: 583px;

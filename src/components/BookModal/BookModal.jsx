@@ -75,8 +75,10 @@ const BookModal = ({ modalClose, teacher }) => {
 
   return (
     <div className={styles.container}>
-      <h3 className={styles.title}>Book trial lesson</h3>
-      <p className={styles.text}>
+      <h3 className={styles.title} id="book-modal-title">
+        Book trial lesson
+      </h3>
+      <p className={styles.text} id="book-modal-description">
         Our experienced tutor will assess your current language level, discuss
         your learning goals, and tailor the lesson to your specific needs.
       </p>
@@ -95,7 +97,12 @@ const BookModal = ({ modalClose, teacher }) => {
         </div>
       </div>
 
-      <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className={styles.form}
+        aria-labelledby="book-modal-title"
+        aria-describedby="book-modal-description"
+      >
         <div className={styles.fieldsetWrapper}>
           <fieldset className={styles.fieldset}>
             <legend className={styles.legend}>
@@ -110,8 +117,13 @@ const BookModal = ({ modalClose, teacher }) => {
                   value="career"
                   id={careerId}
                   className={styles.radio}
+                  aria-labelledby={`career-label`}
                 />
-                <label htmlFor={careerId} className={styles.label}>
+                <label
+                  htmlFor={careerId}
+                  className={styles.label}
+                  id={`career-label`}
+                >
                   Career and business
                 </label>
               </div>
@@ -123,8 +135,13 @@ const BookModal = ({ modalClose, teacher }) => {
                   value="lesson"
                   id={lessonId}
                   className={styles.radio}
+                  aria-labelledby={`lesson-label`}
                 />
-                <label htmlFor={lessonId} className={styles.label}>
+                <label
+                  htmlFor={lessonId}
+                  className={styles.label}
+                  id={`lesson-label`}
+                >
                   Lesson for kids{' '}
                 </label>
               </div>
@@ -136,8 +153,13 @@ const BookModal = ({ modalClose, teacher }) => {
                   value="abroad"
                   id={abroadId}
                   className={styles.radio}
+                  aria-labelledby={`abroad-label`}
                 />
-                <label htmlFor={abroadId} className={styles.label}>
+                <label
+                  htmlFor={abroadId}
+                  className={styles.label}
+                  id={`abroad-label`}
+                >
                   Living abroad{' '}
                 </label>
               </div>
@@ -149,8 +171,13 @@ const BookModal = ({ modalClose, teacher }) => {
                   value="exams"
                   id={examsId}
                   className={styles.radio}
+                  aria-labelledby={`exams-label`}
                 />
-                <label htmlFor={examsId} className={styles.label}>
+                <label
+                  htmlFor={examsId}
+                  className={styles.label}
+                  id={`exams-label`}
+                >
                   Exams and coursework{' '}
                 </label>
               </div>
@@ -162,8 +189,13 @@ const BookModal = ({ modalClose, teacher }) => {
                   value="culture"
                   id={cultureId}
                   className={styles.radio}
+                  aria-labelledby={`culture-label`}
                 />
-                <label htmlFor={cultureId} className={styles.label}>
+                <label
+                  htmlFor={cultureId}
+                  className={styles.label}
+                  id={`culture-label`}
+                >
                   Culture, travel or hobby{' '}
                 </label>
               </div>
@@ -175,31 +207,44 @@ const BookModal = ({ modalClose, teacher }) => {
 
         <div className={styles.userInfo}>
           <div className={styles.nameWrapper}>
+            <label htmlFor={fullnameId} className={styles.label}>
+              Full name
+            </label>
             <input
               id={fullnameId}
               {...register('fullname')}
               className={styles.input}
               placeholder="Full name"
+              aria-required="true"
             />
             <p className={styles.errorText}>{errors.fullname?.message}</p>
           </div>
 
           <div className={styles.emailWrapper}>
+            <label htmlFor={emailId} className={styles.label}>
+              Email
+            </label>
             <input
               id={emailId}
               {...register('email')}
               className={styles.input}
               placeholder="Email"
+              autoComplete="email"
+              aria-required="true"
             />
             <p className={styles.errorText}>{errors.email?.message}</p>
           </div>
 
           <div className={styles.dateWrapper}>
+            <label htmlFor={phoneNumberId} className={styles.label}>
+              Phone number
+            </label>
             <input
               id={phoneNumberId}
               {...register('phoneNumber')}
               className={styles.input}
               placeholder="Phone number"
+              aria-required="true"
             />
             <p className={styles.errorText}>{errors.phoneNumber?.message}</p>
           </div>

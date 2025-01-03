@@ -74,19 +74,31 @@ const SignIn = ({ modalClose }) => {
         continue your search for an teacher.
       </p>
 
-      <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className={styles.form}
+        aria-labelledby="sign-in-title"
+        aria-describedby="sign-in-description"
+      >
         <div className={styles.emailWrapper}>
+          <label htmlFor={emailId} className={styles.label}>
+            Email
+          </label>
           <input
             id={emailId}
             {...register('email')}
             placeholder="Email"
             autoComplete="email"
             className={clsx(styles.input, styles.email)}
+            aria-required="true"
           />
           <p className={styles.errorText}>{errors.email?.message}</p>
         </div>
 
         <div className={styles.passwordWrapper}>
+          <label htmlFor={passwordId} className={styles.label}>
+            Password
+          </label>
           <input
             id={passwordId}
             type={isPassword ? 'password' : 'text'}
@@ -94,15 +106,16 @@ const SignIn = ({ modalClose }) => {
             placeholder="Password"
             autoComplete="current-password"
             className={clsx(styles.input, styles.password)}
+            aria-required="true"
           />
-
           <button
             type="button"
             onClick={togglePassword}
             className={styles.eyeButton}
+            aria-label={isPassword ? 'Show password' : 'Hide password'}
           >
             {isPassword ? (
-              <img src={eyeIcon} alt="eye" className="eye" />
+              <img src={eyeIcon} alt="eye icon" className="eye" />
             ) : (
               <Icon
                 id="eye"
@@ -110,6 +123,7 @@ const SignIn = ({ modalClose }) => {
                 height={20}
                 className={styles.eye}
                 fillColor="#121417"
+                role="button"
               />
             )}
           </button>

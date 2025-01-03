@@ -7,14 +7,26 @@ const FilterBar = () => {
   const priceId = useId();
 
   return (
-    <div className={styles.wrapper}>
+    <div
+      className={styles.wrapper}
+      role="region"
+      aria-labelledby="filter-bar-title"
+    >
+      <h3 id="filter-bar-title" className={styles.hidden}>
+        Filter Options
+      </h3>
       <ul className={styles.list}>
         <li className={styles.item}>
           <label htmlFor={languagesId} className={styles.label}>
             Languages
           </label>
 
-          <select name="language" id={languagesId} className={styles.select}>
+          <select
+            name="language"
+            id={languagesId}
+            className={styles.select}
+            aria-labelledby="languages-label"
+          >
             <option value="french">French</option>
             <option value="english">English</option>
             <option value="ukrainian">Ukrainian</option>
@@ -27,7 +39,12 @@ const FilterBar = () => {
             Level of knowledge
           </label>
 
-          <select name="level" id={levelId} className={styles.select}>
+          <select
+            name="level"
+            id={levelId}
+            className={styles.select}
+            aria-labelledby="level-label"
+          >
             <option value="a1">A1 Beginner</option>
             <option value="a2">A2 Elementary</option>
             <option value="b1">B1 Intermediate</option>
@@ -40,7 +57,12 @@ const FilterBar = () => {
             Price
           </label>
 
-          <select name="price" id={priceId} className={styles.select}>
+          <select
+            name="price"
+            id={priceId}
+            className={styles.select}
+            aria-labelledby="price-label"
+          >
             <option value="a1">10</option>
             <option value="a2">20</option>
             <option value="b1">30</option>

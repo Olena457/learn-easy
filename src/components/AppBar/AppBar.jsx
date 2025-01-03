@@ -15,9 +15,9 @@ const AppBar = () => {
     return clsx(styles.link, isActive && styles.active);
   };
   return (
-    <header className={styles.header}>
+    <header className={styles.header} role="banner">
       <div className={styles.mainWrapper}>
-        <Link to="/" className={styles.logoContainer}>
+        <Link to="/" className={styles.logoContainer} aria-label="Home">
           <img src={ukraine} alt="Flag of Ukraine" className={styles.logo} />
           <span className={styles.logoName}>learnLingo</span>
         </Link>
@@ -25,11 +25,19 @@ const AppBar = () => {
           <NavLink to="/" className={buildActiveClass}>
             Home
           </NavLink>
-          <NavLink to="/teachers" className={buildActiveClass}>
+          <NavLink
+            to="/teachers"
+            className={buildActiveClass}
+            aria-label="Teachers"
+          >
             Teachers
           </NavLink>
           {isLoggedIn && (
-            <NavLink to="/favorites" className={buildActiveClass}>
+            <NavLink
+              to="/favorites"
+              className={buildActiveClass}
+              aria-label="Favorites"
+            >
               Favorites
             </NavLink>
           )}
