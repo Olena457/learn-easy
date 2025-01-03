@@ -85,11 +85,11 @@
 
 .radio {
   accent-color: transparent;
-  border-color: black;
+  border-color: var(--black-color, black);
 }
 
 .radio:checked {
-  accent-color: red;
+  accent-color: var(--red-color);
 }
 
 .input {
@@ -98,11 +98,17 @@
   padding: 16px 18px;
   width: 100%;
 }
-
-.input::placeholder {
+.label {
+  font-weight: 500;
   font-size: 16px;
   line-height: 1.375;
   color: var(--black-color, black);
+  margin-bottom: 8px;
+}
+.input::placeholder {
+  font-size: 16px;
+  line-height: 1.375;
+  color: var(--dark-gray-color, black);
 }
 
 .userInfo {
@@ -116,18 +122,20 @@
   border-radius: 12px;
   width: 268px;
   height: 60px;
-  background-color: #9fb7ce;
+  background-color: var(--accent-color, #9fb7ce);
   font-weight: 700;
   font-size: 18px;
   line-height: 1.55556;
   color: var(--black-color, black);
 }
-
+.submitBtn:hover {
+  background-color: var(--hover-color, #afc7dc);
+}
 .errorText {
   position: absolute;
   left: 18px;
   bottom: -16px;
-  color: red;
+  color: var(--red-color, red);
   font-size: 0.8rem;
 }
 

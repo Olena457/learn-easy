@@ -1,18 +1,9 @@
 .mainWrapper {
   display: none;
 }
-/* .header {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  padding: 10px 20px;
-} */
 .header {
   display: block;
   padding: 0px 10px;
-  /* align-items: center;
-  gap: 20px;
-  padding: 10px 20px; */
 }
 .logoContainer {
   display: flex;
@@ -68,7 +59,7 @@
   }
 
   .active {
-    color: var(--accent-color, yellow);
+    color: var(--accent-color);
   }
 }
 

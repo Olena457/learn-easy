@@ -1,8 +1,10 @@
 import styles from './FeaturesSection.module.css';
-
+import useTheme from '../../contextTheme/useTheme.js';
 const FeaturesSection = () => {
+  const { theme } = useTheme();
+
   return (
-    <section className={styles.sectionFeatures}>
+    <section className={styles.sectionFeatures} data-theme={theme}>
       <ul className={styles.list}>
         <li className={styles.item}>
           <p className={styles.number} aria-label="32,000 plus">

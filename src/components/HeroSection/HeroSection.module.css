@@ -34,14 +34,16 @@
 .link {
   border-radius: 12px;
   padding: 16px 44px;
-  background: var(--accent-color, gold);
+  background: var(--accent-color);
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
   font-size: 18px;
   line-height: 1.55556;
   color: var(--black-color, black);
 }
-
+.link:hover {
+  background: var(--hover-color);
+}
 @media (min-width: 768px) {
   .section {
     min-height: 450px;
@@ -57,7 +59,6 @@
 }
 @media (min-width: 1440px) {
   .section {
-    /* max-width: unset; */
     width: 720px;
     padding: 98px 64px;
   }

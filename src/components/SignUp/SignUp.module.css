@@ -48,13 +48,15 @@
   border-radius: 12px;
   width: 100%;
   height: 60px;
-  background: #9fb7ce;
+  background: var(--accent-color);
   font-weight: 700;
   font-size: 18px;
   line-height: 1.55556;
   color: #121417;
 }
-
+.subvmitBtn:hover {
+  background: var(--hover-color);
+}
 .emailWrapper {
   margin-bottom: 18px;
   position: relative;
@@ -70,7 +72,7 @@
   position: absolute;
   left: 0;
   bottom: -18px;
-  color: red;
+  color: var(--red-color);
 }
 
 @media (min-width: 768px) {

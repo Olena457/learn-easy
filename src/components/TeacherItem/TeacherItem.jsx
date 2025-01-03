@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectIsLoggedIn } from '../../redux/auth/selectorsAuth.js';
 import { selectFavoritesIds } from '../../redux/favorites/selectorsFavorites.js';
 import { toggleFavorite } from '../../redux/favorites/operationsFavorites.js';
+import useTheme from '../../contextTheme/useTheme.js';
 import Icon from '../Icon/Icon.jsx';
 import styles from './TeacherItem.module.css';
 import book from '../../icons/book.svg';
@@ -15,12 +16,10 @@ const TeacherItem = ({ teacher }) => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const [isExpanded, setIsExpanded] = useState(false);
   const favoriteIndexes = useSelector(selectFavoritesIds);
-
   const [isLiked, setLiked] = useState(favoriteIndexes.includes(teacher.id));
-
   const [isBookOpen, setBookOpen] = useState(false);
-
   const dispatch = useDispatch();
+  const { theme } = useTheme();
 
   const handleBookOpen = () => setBookOpen(true);
   const handleBookClose = () => setBookOpen(false);
@@ -39,7 +38,7 @@ const TeacherItem = ({ teacher }) => {
   };
 
   return (
-    <li className={styles.item}>
+    <li className={`${styles.item} ${styles[theme]}`}>
       <div className={styles.circle}>
         <img
           src={teacher['avatar_url']}

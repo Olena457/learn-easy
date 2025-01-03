@@ -1,10 +1,13 @@
 import { NavLink } from 'react-router-dom';
+import useTheme from '../../contextTheme/useTheme.js';
 import styles from './HeroSection.module.css';
 
 const HeroSection = () => {
+  const { theme } = useTheme();
   return (
     <section
       className={styles.section}
+      data-theme={theme}
       aria-labelledby="hero-title"
       aria-describedby="hero-description"
     >

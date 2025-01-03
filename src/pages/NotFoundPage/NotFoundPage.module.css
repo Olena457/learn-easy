@@ -8,7 +8,7 @@
   font-size: 32px;
   line-height: 1.2;
   margin: 0;
-  color: #ff0000;
+  color: var(--red-color);
 }
 @media (min-width: 768px) {
   .red {

@@ -192,7 +192,9 @@
   line-height: 1.55556;
   color: var(--black-color, black);
 }
-
+.bookBtn:hover {
+  background: var(--hover-color);
+}
 @media (min-width: 768px) {
   .item {
     max-width: unset;
@@ -317,7 +319,6 @@
 
   .lessonsInfo {
     width: 607px;
-    flex-wrap: unset;
   }
 
   .levelsList {
