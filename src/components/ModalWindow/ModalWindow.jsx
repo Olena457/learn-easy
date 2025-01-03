@@ -1,7 +1,7 @@
+import { useEffect } from 'react';
 import Modal from 'react-modal';
 import style from './ModalWindow.module.css';
 import Icon from '../Icon/Icon.jsx';
-import { useEffect } from 'react';
 
 const ModalWindow = ({ modalIsOpen, onCloseModal, children }) => {
   useEffect(() => {

@@ -1,12 +1,12 @@
-import styles from './AppBar.module.css';
-import ukraine from '../../icons/ukraine.svg';
+import { useSelector } from 'react-redux';
 import { Link, NavLink } from 'react-router-dom';
 import AuthNav from '../AuthNav/AuthNav.jsx';
-import { useSelector } from 'react-redux';
 import clsx from 'clsx';
 import { selectIsLoggedIn } from '../../redux/auth/selectorsAuth.js';
+import ukraine from '../../icons/ukraine.svg';
 import MobileMenu from '../MobileMenu/MobileMenu.jsx';
 import ThemeSwitcher from '../ThemeSwitcher/ThemeSwitcher.jsx';
+import styles from './AppBar.module.css';
 
 const AppBar = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);

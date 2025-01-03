@@ -1,11 +1,11 @@
 import styles from './HomePage.module.css';
-import FeaturesSection from '../../components/FeaturesSection/FeaturesSection';
-import ThemedImage from '../../components/ThemedImage/ThemedImage';
-import HeroSection from '../../components/HeroSection/HeroSection';
+import ThemedImage from '../../components/ThemedImage/ThemedImage.jsx';
+import HeroSection from '../../components/HeroSection/HeroSection.jsx';
+import FeaturesSection from '../../components/FeaturesSection/FeaturesSection.jsx';
 
 const HomePage = () => {
   return (
-    <main className={styles.main}>
+    <main>
       <div className={styles.heroContainer}>
         <HeroSection />
         <ThemedImage />
