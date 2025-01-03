@@ -141,6 +141,7 @@ const SignUp = ({ modalClose }) => {
                 width={20}
                 height={20}
                 className={styles.eye}
+                role="button"
                 fillColor="#121417"
               />
             )}

@@ -1,0 +1,40 @@
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.number {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.14286;
+  letter-spacing: -0.02em;
+  color: black;
+  text-wrap: nowrap;
+}
+.text {
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.02em;
+  color: black;
+  text-wrap: wrap;
+}
+
+@media (min-width: 768px) {
+  .item {
+    flex-direction: row;
+    width: calc((100% - 24px) / 2);
+    justify-content: center;
+  }
+  .text {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .number {
+    font-size: 28px;
+  }
+  .item {
+    align-items: center;
+  }
+}

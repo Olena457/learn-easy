@@ -115,7 +115,7 @@ const SignIn = ({ modalClose }) => {
             aria-label={isPassword ? 'Show password' : 'Hide password'}
           >
             {isPassword ? (
-              <img src={eyeIcon} alt="eye icon" className="eye" />
+              <img src={eyeIcon} alt="eye icon" className={styles.eye} />
             ) : (
               <Icon
                 id="eye"
