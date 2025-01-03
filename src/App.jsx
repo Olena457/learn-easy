@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import 'modern-normalize';
+import Modal from 'react-modal';
+
 import './App.css';
 import Layout from './components/Layout/Layout.jsx';
 import { auth } from './firebase/firebaseConfig.js';
@@ -23,6 +25,8 @@ const FavoritesTeachersPage = lazy(() =>
 const NotFoundPage = lazy(() =>
   import('./pages/NotFoundPage/NotFoundPage.jsx')
 );
+
+Modal.setAppElement('#root');
 
 function App() {
   const dispatch = useDispatch();

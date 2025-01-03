@@ -59,7 +59,7 @@
   }
 
   .active {
-    color: var(--accent-color);
+    color: var(--accent-color, #9fb7ce);
   }
 }
 

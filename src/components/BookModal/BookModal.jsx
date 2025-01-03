@@ -4,7 +4,6 @@ import * as yup from 'yup';
 import { useId } from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
-import useTheme from '../../contextTheme/useTheme.js';
 import { bookTeacher } from '../../redux/teachers/operationsTeachers.js';
 import { toast } from 'react-toastify';
 
@@ -29,7 +28,6 @@ const bookSchema = yup.object({
 });
 
 const BookModal = ({ modalClose, teacher }) => {
-  const { theme } = useTheme();
   const dispatch = useDispatch();
 
   const fullnameId = useId();
@@ -76,7 +74,7 @@ const BookModal = ({ modalClose, teacher }) => {
   };
 
   return (
-    <div className={`${styles.container} ${styles[theme]}`}>
+    <div className={styles.container}>
       <h3 className={styles.title} id="book-modal-title">
         Book trial lesson
       </h3>
@@ -252,10 +250,7 @@ const BookModal = ({ modalClose, teacher }) => {
           </div>
         </div>
 
-        <button
-          type="submit"
-          className={`${styles.submitBtn} ${styles[theme]}`}
-        >
+        <button type="submit" className={styles.submitBtn}>
           Book
         </button>
       </form>

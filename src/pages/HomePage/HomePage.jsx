@@ -18,3 +18,6 @@ export default HomePage;
 
 //         v7_normalizeFormMethod: true,
 //         v7_routerProviderHydration: true,
+// {
+//   "rewrites": [{ "source": "/(.*)", "destination": "/" }]
+// }

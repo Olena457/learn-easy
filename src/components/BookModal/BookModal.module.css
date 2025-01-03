@@ -50,9 +50,6 @@
   color: var(--black-color, black);
 }
 
-/* .form {
-} */
-
 .fieldsetWrapper {
   margin-bottom: 40px;
   position: relative;
@@ -122,14 +119,14 @@
   border-radius: 12px;
   width: 268px;
   height: 60px;
-  background-color: var(--accent-color, #9fb7ce);
+  background-color: #9fb7ce;
   font-weight: 700;
   font-size: 18px;
   line-height: 1.55556;
   color: var(--black-color, black);
 }
 .submitBtn:hover {
-  background-color: var(--hover-color, #afc7dc);
+  background-color: #afc7dc;
 }
 .errorText {
   position: absolute;
