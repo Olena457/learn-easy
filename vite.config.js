@@ -7,5 +7,4 @@ export default defineConfig({
   build: {
     soursemap: true,
   },
-  envPrefix: 'VITE_',
 });
