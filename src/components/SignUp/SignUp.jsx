@@ -6,7 +6,7 @@ import clsx from 'clsx';
 import * as yup from 'yup';
 import styles from './SignUp.module.css';
 import Icon from '../Icon/Icon.jsx';
-import eyeIcon from '../../icons/eye.svg';
+import eyeIcon from '../../../public/eye.svg';
 import { toast } from 'react-toastify';
 import { registerUser } from '../../redux/auth/operationsAuth.js';
 

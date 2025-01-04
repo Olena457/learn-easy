@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 import AuthNav from '../AuthNav/AuthNav.jsx';
 import clsx from 'clsx';
 import { selectIsLoggedIn } from '../../redux/auth/selectorsAuth.js';
-import ukraine from '../../icons/ukraine.svg';
+import ukraine from '../../../public/ukraine.svg';
 import MobileMenu from '../MobileMenu/MobileMenu.jsx';
 import ThemeSwitcher from '../ThemeSwitcher/ThemeSwitcher.jsx';
 import useTheme from '../../contextTheme/useTheme.js';

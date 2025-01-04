@@ -7,8 +7,8 @@ import { toggleFavorite } from '../../redux/favorites/operationsFavorites.js';
 import useTheme from '../../contextTheme/useTheme.js';
 import Icon from '../Icon/Icon.jsx';
 import styles from './TeacherItem.module.css';
-import book from '../../icons/book.svg';
-import defaultAvatar from '../../icons/user.svg';
+import book from '../../../public/book.svg';
+import defaultAvatar from '../../../public/user.svg';
 import ModalWindow from '../ModalWindow/ModalWindow.jsx';
 import BookModal from '../BookModal/BookModal.jsx';
 

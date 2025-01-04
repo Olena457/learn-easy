@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
 import styles from './AuthNav.module.css';
-import logoutIcon from '../../icons/logout.svg';
+import logoutIcon from '../../../public/logout.svg';
 import {
   selectIsLoggedIn,
   selectUser,
