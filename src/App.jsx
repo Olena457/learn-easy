@@ -9,7 +9,7 @@ import Layout from './components/Layout/Layout.jsx';
 import { auth } from './firebase/firebaseConfig.js';
 import { refreshUser } from './redux/auth/operationsAuth.js';
 import { selectIsRefreshing } from './redux/auth/selectorsAuth.js';
-import { PrivateRoute } from './components/PrivateRoute.jsx';
+import PrivateRoute from './components/PrivateRoute.jsx';
 import Modal from 'react-modal';
 import Loader from './components/Loader/Loader.jsx';
 
