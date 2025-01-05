@@ -6,7 +6,7 @@ import { selectIsLoggedIn } from '../../redux/auth/selectorsAuth.js';
 import ukraine from '../../assets/icons/ukraine.svg';
 import MobileMenu from '../MobileMenu/MobileMenu.jsx';
 import ThemeSwitcher from '../ThemeSwitcher/ThemeSwitcher.jsx';
-import useTheme from '../../contextTheme/useTheme.js';
+import useTheme from '../../hooks/useTheme.js';
 import styles from './AppBar.module.css';
 
 const AppBar = () => {

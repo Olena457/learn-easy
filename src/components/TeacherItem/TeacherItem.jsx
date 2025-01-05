@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectIsLoggedIn } from '../../redux/auth/selectorsAuth.js';
 import { selectFavoritesIds } from '../../redux/favorites/selectorsFavorites.js';
 import { toggleFavorite } from '../../redux/favorites/operationsFavorites.js';
-import useTheme from '../../contextTheme/useTheme.js';
+import useTheme from '../../hooks/useTheme.js';
 import Icon from '../Icon/Icon.jsx';
 import styles from './TeacherItem.module.css';
 import book from '../../assets/icons/book.svg';

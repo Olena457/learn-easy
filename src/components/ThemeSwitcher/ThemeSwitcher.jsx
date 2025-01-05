@@ -32,7 +32,7 @@
 // };
 
 // export default ThemeSwitcher;
-import useTheme from '../../contextTheme/useTheme.js';
+import useTheme from '../../hooks/useTheme.js';
 import ThemeButton from '../ThemeButton/ThemeButton.jsx';
 import styles from './ThemeSwitcher.module.css';
 
