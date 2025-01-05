@@ -10,6 +10,13 @@ export default defineConfig({
     outDir: 'dist',
     rollupOptions: {
       input: './index.html',
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            return 'vendor';
+          }
+        },
+      },
     },
     sourcemap: true,
   },
