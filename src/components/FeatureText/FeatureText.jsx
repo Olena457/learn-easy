@@ -1,7 +1,7 @@
-import styles from './FeatureText.module.css';
+// import styles from './FeatureText.module.css';
 
-const FeatureText = ({ text }) => {
-  return <p className={styles.text}>{text}</p>;
-};
+// const FeatureText = ({ text }) => {
+//   return <p className={styles.text}>{text}</p>;
+// };
 
-export default FeatureText;
+// export default FeatureText;

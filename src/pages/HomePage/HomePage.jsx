@@ -1,7 +1,7 @@
 import styles from './HomePage.module.css';
 import HeroSection from '../../components/HeroSection/HeroSection.jsx';
 import ThemedImage from '../../components/ThemedImage/ThemedImage.jsx';
-import FeaturesSection from '../../components/FeaturesSection/FeaturesSection.jsx';
+// import FeaturesSection from '../../components/FeaturesSection/FeaturesSection.jsx';
 
 const HomePage = () => {
   return (
@@ -10,7 +10,7 @@ const HomePage = () => {
         <HeroSection />
         <ThemedImage />
       </div>
-      <FeaturesSection />
+      {/* <FeaturesSection /> */}
     </>
   );
 };

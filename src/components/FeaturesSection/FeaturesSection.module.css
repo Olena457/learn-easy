@@ -78,7 +78,7 @@
     align-items: center;
   }
 } */
-.section {
+/* .section {
   border: 1.8px dashed var(--accent-color);
   border-radius: 30px;
   min-width: 285px;
@@ -108,4 +108,4 @@
     padding: 30px 100px;
     flex-wrap: nowrap;
   }
-}
+} */
