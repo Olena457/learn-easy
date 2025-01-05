@@ -1,6 +1,6 @@
-import blueImage from '../../../public/image/blue-theme.jpg';
-import yellowImage from '../../../public/image/yellow-theme.jpg';
-import redImage from '../../../public/image/red-theme.jpg';
+import blueImage from '../../assets/image/blue-theme.jpg';
+import yellowImage from '../../assets/image/yellow-theme.jpg';
+import redImage from '../../assets/image/red-theme.jpg';
 import styles from './ThemeImageComponent.module.css';
 
 const ThemeImageComponent = ({ theme }) => {

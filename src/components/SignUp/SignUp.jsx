@@ -6,7 +6,7 @@ import clsx from 'clsx';
 import * as yup from 'yup';
 import styles from './SignUp.module.css';
 import Icon from '../Icon/Icon.jsx';
-import eyeIcon from '../../../public/eye.svg';
+import eyeIcon from '../../assets/icons/eye.svg';
 import { toast } from 'react-toastify';
 import { registerUser } from '../../redux/auth/operationsAuth.js';
 
@@ -138,11 +138,13 @@ const SignUp = ({ modalClose }) => {
             ) : (
               <Icon
                 id="eye"
+                aria-label="Hide password"
                 width={20}
                 height={20}
                 className={styles.eye}
                 role="button"
                 fillColor="#121417"
+                inert="falce"
               />
             )}
           </button>
@@ -151,7 +153,7 @@ const SignUp = ({ modalClose }) => {
           )}
         </div>
 
-        <button type="submit" className={styles.submitBtn}>
+        <button type="submit" className={styles.submitBtn} aria-label="log in">
           Log In
         </button>
       </form>

@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 import AuthNav from '../AuthNav/AuthNav.jsx';
 import clsx from 'clsx';
 import { selectIsLoggedIn } from '../../redux/auth/selectorsAuth.js';
-import ukraine from '../../../public/ukraine.svg';
+import ukraine from '../../assets/icons/ukraine.svg';
 import MobileMenu from '../MobileMenu/MobileMenu.jsx';
 import ThemeSwitcher from '../ThemeSwitcher/ThemeSwitcher.jsx';
 import useTheme from '../../contextTheme/useTheme.js';
@@ -19,12 +19,17 @@ const AppBar = () => {
   return (
     <header className={`${styles.header} ${styles[theme]}`} role="banner">
       <div className={styles.mainWrapper}>
-        <Link to="/" className={styles.logoContainer} aria-label="Home">
-          <img src={ukraine} alt="Flag of Ukraine" className={styles.logo} />
+        <Link to="/" className={styles.logoContainer}>
+          <img
+            src={ukraine}
+            alt="Flag of Ukraine"
+            className={styles.logo}
+            role="img"
+          />
           <span className={styles.logoName}>learnLingo</span>
         </Link>
         <nav className={styles.nav}>
-          <NavLink to="/" className={buildActiveClass}>
+          <NavLink to="/" className={buildActiveClass} aria-label="Home">
             Home
           </NavLink>
           <NavLink

@@ -22,14 +22,16 @@ const MobileMenu = () => {
             type="button"
             onClick={openModal}
             className={styles.burgerBtn}
+            aria-label="mobile menu"
           >
             <Icon
               id="burger"
+              role="button"
               width="32"
               height="32"
               className={styles.icon}
               fillColor="#121417"
-              role="button"
+              inert="falce"
             />
           </button>
           <AuthNav />

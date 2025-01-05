@@ -1,0 +1,8 @@
+.quantity {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.14286;
+  letter-spacing: -0.02em;
+  color: black;
+  text-wrap: nowrap;
+}

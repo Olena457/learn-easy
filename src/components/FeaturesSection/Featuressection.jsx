@@ -1,32 +1,29 @@
-import useTheme from '../../contextTheme/useTheme.js';
 import FeatureItem from '../FeatureItem/FeatureItem.jsx';
 import styles from './FeaturesSection.module.css';
 
 const FeaturesSection = () => {
-  const { theme } = useTheme();
-
   return (
-    <section className={styles.sectionFeatures} data-theme={theme}>
+    <section className={styles.section}>
       <ul className={styles.list}>
         <FeatureItem
-          number={'\u0033\u0032\u002C\u0030\u0030\u0030 \u002B'}
-          label="32,000 plus"
+          quantity="32,000 +"
           text="Experienced tutors"
+          aria-label="32,000+ Experienced tutors"
         />
         <FeatureItem
-          number={'\u0033\u0030\u0030\u002C\u0030\u0030\u0030 \u002B'}
-          label="300,000 plus"
+          quantity="300,000 +"
           text="5-star tutor reviews"
+          aria-label="300,000+ 5-star tutor reviews"
         />
         <FeatureItem
-          number={'\u0031\u0032\u0030 \u002B'}
-          label="120 plus"
+          quantity="120 +"
           text="Subjects taught"
+          aria-label="120+ Subjects taught"
         />
         <FeatureItem
-          number={'\u0032\u0030\u0030 \u002B'}
-          label="200 plus"
+          quantity="200 +"
           text="Tutor nationalities"
+          aria-label="200+ Tutor nationalities"
         />
       </ul>
     </section>

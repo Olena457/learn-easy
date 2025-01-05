@@ -3,7 +3,6 @@
   padding: 24px;
   max-width: 320px;
   background: var(--white-color, white);
-  padding: 24px;
   margin: 0 auto;
 }
 
@@ -37,6 +36,7 @@
 
 .name {
   font-size: 28px;
+  text-align: center;
 }
 
 .lessonsWrapper {
@@ -55,6 +55,7 @@
   line-height: 1.5;
   color: var(--black-color);
 }
+
 .price {
   color: var(--green-color);
 }
@@ -167,12 +168,6 @@
   color: var(--black-color, black);
 }
 
-.sad {
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.28571;
-  color: var(--black-color, black);
-}
 .closeText {
   margin-left: 5px;
   font-weight: 500;
@@ -192,9 +187,11 @@
   line-height: 1.55556;
   color: var(--black-color, black);
 }
+
 .bookBtn:hover {
   background: var(--hover-color);
 }
+
 @media (min-width: 768px) {
   .item {
     max-width: unset;
@@ -244,10 +241,10 @@
     text-align: unset;
   }
 
-  .lessonsWrapper {
+  /* .lessonsWrapper {
     justify-content: unset;
     margin-bottom: 0;
-  }
+  } */
 
   .lessonsInfo {
     height: 24px;
@@ -279,6 +276,7 @@
   .ratingWrapper {
     display: flex;
     gap: 8px;
+    margin-left: 30px;
     align-items: center;
   }
 
@@ -311,15 +309,17 @@
   .mainInfoWrapper {
     width: 968px;
   }
-
+  .ratingWrapper {
+    margin-left: 15px;
+  }
   .lessonsWrapper {
-    width: 697px;
+    /* width: 697px; */
     height: 26px;
   }
 
-  .lessonsInfo {
+  /* .lessonsInfo {
     width: 607px;
-  }
+  } */
 
   .levelsList {
     flex-wrap: nowrap;

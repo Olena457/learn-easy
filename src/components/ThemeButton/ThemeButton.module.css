@@ -1,0 +1,24 @@
+.circle {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+.circle:hover {
+  transform: scale(1.1);
+  border: 1px solid #94948e;
+}
+
+.btnBlue {
+  background-color: #9fb7ce;
+}
+
+.btnYellow {
+  background-color: #f4c550;
+}
+
+.btnRed {
+  background-color: #e0a39a;
+}

@@ -1,14 +1,15 @@
+import FeatureQuantity from '../FeatureQuantity/FeatureQuantity.jsx';
+import FeatureText from '../FeatureText/FeatureText.jsx';
 import styles from './FeatureItem.module.css';
 
-const FeatureItem = ({ number, label, text }) => {
+const FeatureItem = ({ quantity, text }) => {
   return (
     <li className={styles.item}>
-      <p className={styles.number} aria-label={label}>
-        {number}
-      </p>
-      <p className={styles.text}>{text}</p>
+      <div className={styles.featureItem}>
+        <FeatureQuantity quantity={quantity} />
+        <FeatureText text={text} />
+      </div>
     </li>
   );
 };
-
 export default FeatureItem;

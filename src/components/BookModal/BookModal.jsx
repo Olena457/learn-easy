@@ -250,7 +250,7 @@ const BookModal = ({ modalClose, teacher }) => {
           </div>
         </div>
 
-        <button type="submit" className={styles.submitBtn}>
+        <button type="submit" className={styles.submitBtn} aria-label="book">
           Book
         </button>
       </form>

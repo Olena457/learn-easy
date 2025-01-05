@@ -1,4 +1,5 @@
-import sprite from '';
+import sprite from '../../assets/sprite/sprite.svg';
+
 const Icon = ({
   id,
   width,
@@ -6,7 +7,7 @@ const Icon = ({
   className = '',
   fillColor,
   role,
-  ariaHidden = role === 'button' ? 'false' : 'true',
+  inert = role === 'button' ? 'false' : 'true',
   ...props
 }) => {
   return (
@@ -15,7 +16,7 @@ const Icon = ({
       style={{ background: 'transparent' }}
       width={width}
       height={height}
-      aria-hidden={ariaHidden}
+      inert={inert}
       role={role}
       {...props}
     >

@@ -43,8 +43,8 @@ const TeachersList = ({ teachers }) => {
           </ul>
           {isVisible && (
             <button
-              className={styles.moreBtn}
               type="button"
+              className={styles.moreBtn}
               onClick={handleShowMore}
               aria-label="Load more teachers"
             >

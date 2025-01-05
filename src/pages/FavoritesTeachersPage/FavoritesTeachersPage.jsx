@@ -18,6 +18,7 @@ const FavoritesTeachersPage = () => {
   useEffect(() => {
     dispatch(fetchFavorites());
   }, [dispatch]);
+
   return (
     <main className={styles.main}>
       <FilterBar />

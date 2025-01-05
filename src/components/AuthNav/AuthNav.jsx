@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
 import styles from './AuthNav.module.css';
-import logoutIcon from '../../../public/logout.svg';
+import logoutIcon from '../../assets/icons/logout.svg';
 import {
   selectIsLoggedIn,
   selectUser,
@@ -33,12 +33,14 @@ const AuthNav = () => {
             type="button"
             onClick={handleSignInOpen}
             className={styles.loginButton}
+            aria-label="log out"
           >
             <img
+              role="button"
               src={logoutIcon}
               alt="Logout icon"
               className={styles.logoutIcon}
-              role="button"
+              inert="false"
             />
             <span className={styles.loginText}>Log in</span>
           </button>
@@ -47,6 +49,7 @@ const AuthNav = () => {
             type="button"
             onClick={handleSignUpOpen}
             className={styles.buttonRegister}
+            aria-label="registration"
           >
             Registration
           </button>
@@ -59,12 +62,14 @@ const AuthNav = () => {
             type="button"
             onClick={() => dispatch(logoutUser())}
             className={styles.buttonLogin}
+            aria-label="log out"
           >
             <img
               src={logoutIcon}
               alt="Logout icon"
               className={styles.logoutIcon}
               role="button"
+              inert="false"
             />
             <span className={styles.loginText}>Log out</span>
           </button>

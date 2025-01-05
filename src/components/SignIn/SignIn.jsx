@@ -5,7 +5,7 @@ import styles from './SignIn.module.css';
 import { useId, useState } from 'react';
 import clsx from 'clsx';
 import Icon from '../Icon/Icon.jsx';
-import eyeIcon from '../../../public/eye.svg';
+import eyeIcon from '../../assets/icons/eye.svg';
 import { toast } from 'react-toastify';
 import { useDispatch } from 'react-redux';
 import { loginUser } from '../../redux/auth/operationsAuth.js';
@@ -119,11 +119,13 @@ const SignIn = ({ modalClose }) => {
             ) : (
               <Icon
                 id="eye"
+                role="button"
+                aria-label="hide password"
                 width={20}
                 height={20}
                 className={styles.eye}
                 fillColor="#121417"
-                role="button"
+                inert="false"
               />
             )}
           </button>
@@ -132,7 +134,7 @@ const SignIn = ({ modalClose }) => {
           )}
         </div>
 
-        <button type="submit" className={styles.buttonSign}>
+        <button type="submit" className={styles.buttonSign} aria-label="log in">
           Log In
         </button>
       </form>

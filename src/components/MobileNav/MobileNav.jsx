@@ -38,7 +38,7 @@ const MobileNav = ({ isOpen, closeModal }) => {
           onClick={closeModal}
           aria-label="Close menu"
         >
-          <Icon id="close" width="32" height="32" role="button" />
+          <Icon id="close" width={32} height={32} role="button" inert="false" />
         </button>
 
         <nav className={styles.burgerNav}>

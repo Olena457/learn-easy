@@ -5,13 +5,13 @@ import FeaturesSection from '../../components/FeaturesSection/FeaturesSection.js
 
 const HomePage = () => {
   return (
-    <main>
+    <>
       <div className={styles.heroContainer}>
         <HeroSection />
         <ThemedImage />
       </div>
       <FeaturesSection />
-    </main>
+    </>
   );
 };
 export default HomePage;
