@@ -12,6 +12,7 @@ import { selectIsRefreshing } from './redux/auth/selectorsAuth.js';
 import PrivateRoute from './components/PrivateRoute.jsx';
 import Modal from 'react-modal';
 import Loader from './components/Loader/Loader.jsx';
+import { ThemeProvider } from './ThemeContext/ThemeContext.jsx';
 
 const HomePage = lazy(() => import('./pages/HomePage/HomePage.jsx'));
 const TeachersPage = lazy(() =>
@@ -44,26 +45,28 @@ function App() {
   return isRefreshing ? (
     <Loader />
   ) : (
-    <Layout>
-      <Suspense fallback={<Loader />}>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/teachers" element={<TeachersPage />} />
-          <Route
-            path="/favorites"
-            element={
-              <PrivateRoute
-                redirectTo="/"
-                component={<FavoritesTeachersPage />}
-              />
-            }
-          />
-          <Route path="*" element={<NotFoundPage />} />
-        </Routes>
-      </Suspense>
+    <ThemeProvider>
+      <Layout>
+        <Suspense fallback={<Loader />}>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/teachers" element={<TeachersPage />} />
+            <Route
+              path="/favorites"
+              element={
+                <PrivateRoute
+                  redirectTo="/"
+                  component={<FavoritesTeachersPage />}
+                />
+              }
+            />
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        </Suspense>
 
-      <ToastContainer />
-    </Layout>
+        <ToastContainer />
+      </Layout>
+    </ThemeProvider>
   );
 }
 
