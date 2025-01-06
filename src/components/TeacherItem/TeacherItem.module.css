@@ -241,11 +241,6 @@
     text-align: unset;
   }
 
-  /* .lessonsWrapper {
-    justify-content: unset;
-    margin-bottom: 0;
-  } */
-
   .lessonsInfo {
     height: 24px;
     margin-right: 64px;
@@ -313,13 +308,8 @@
     margin-left: 15px;
   }
   .lessonsWrapper {
-    /* width: 697px; */
     height: 26px;
   }
-
-  /* .lessonsInfo {
-    width: 607px;
-  } */
 
   .levelsList {
     flex-wrap: nowrap;

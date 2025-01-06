@@ -1,3 +1,12 @@
+.main {
+  border: 2px solid blueviolet;
+}
+.heading {
+  font-size: 13px;
+  font-weight: 400;
+  color: #121417;
+}
+
 .heroContainer {
   display: flex;
   flex-direction: column;

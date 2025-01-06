@@ -5,13 +5,15 @@ import ThemedImage from '../../components/ThemedImage/ThemedImage.jsx';
 
 const HomePage = () => {
   return (
-    <>
-      <div className={styles.heroContainer}>
-        <HeroSection />
-        <ThemedImage />
-      </div>
-      {/* <FeaturesSection /> */}
-    </>
+    <main className={styles.main}>
+      <>
+        <div className={styles.heroContainer}>
+          <HeroSection />
+          <ThemedImage />
+        </div>
+        {/* <ReviewsComponent /> */}
+      </>
+    </main>
   );
 };
 export default HomePage;

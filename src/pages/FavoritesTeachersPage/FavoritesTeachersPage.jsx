@@ -22,6 +22,7 @@ const FavoritesTeachersPage = () => {
   return (
     <main className={styles.main}>
       <FilterBar />
+
       {isLoading && <Loader />}
 
       {favoriteTeachers.length > 0 ? (

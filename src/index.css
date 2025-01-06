@@ -7,31 +7,12 @@
   --gray-color: #dcd9d9;
   --dark-gray-color: #a9a9a9;
 }
-[data-theme='blue'] {
-  --accent-color: #9fb7ce;
-  --secondary-color: #bfd6ea;
-  --hover-color: #afc7dc;
-  --background-color: #eeeeee;
-}
-
-[data-theme='yellow'] {
-  --accent-color: #f4c550;
-  --secondary-color: #fbe9ba;
-  --hover-color: #ffdc86;
-  --background-color: #fffaf0;
-}
-
-[data-theme='red'] {
-  --accent-color: #e0a39a;
-  --secondary-color: #f2c0bd;
-  --hover-color: #f7b3b3;
-  --background-color: #ffefef;
-}
 
 body {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-style: normal;
+
   background-color: var(--gray-color, #dcd9d9);
 }
 

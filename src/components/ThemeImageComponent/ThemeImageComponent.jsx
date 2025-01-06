@@ -14,7 +14,7 @@ const ThemeImageComponent = ({ theme }) => {
     <div className={styles.imageContainer}>
       <img
         src={images[theme]}
-        alt={`User image`}
+        alt={`Theme image`}
         className={styles.themeImage}
       />
     </div>

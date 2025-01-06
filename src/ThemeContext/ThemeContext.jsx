@@ -1,13 +1,23 @@
-import { createContext, useState, useMemo } from 'react';
+import { createContext, useState, useMemo, useEffect } from 'react';
 
 const ThemeContext = createContext();
 
 const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'blue');
+  const [theme, setTheme] = useState('blue');
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      setTheme(savedTheme);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('theme', theme);
+  }, [theme]);
 
   const toggleTheme = themeName => {
     setTheme(themeName);
-    localStorage.setItem('theme', themeName);
   };
 
   const value = useMemo(() => ({ theme, toggleTheme }), [theme]);

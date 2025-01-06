@@ -26,7 +26,7 @@ const NotFoundPage = lazy(() =>
   import('./pages/NotFoundPage/NotFoundPage.jsx')
 );
 
-Modal.setAppElement('#root');
+Modal.setAppElement('#modal-root');
 
 function App() {
   const dispatch = useDispatch();

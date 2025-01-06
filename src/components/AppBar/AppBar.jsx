@@ -49,8 +49,10 @@ const AppBar = () => {
             </NavLink>
           )}
         </nav>
-        <ThemeSwitcher />
-        <AuthNav />
+        <>
+          <ThemeSwitcher />
+          <AuthNav />
+        </>
       </div>
       <MobileMenu />
     </header>

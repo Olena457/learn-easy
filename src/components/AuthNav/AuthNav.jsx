@@ -77,24 +77,25 @@ const AuthNav = () => {
           <div className={styles.buttonRegister}>{user?.name || 'User'}</div>
         </div>
       )}
+      <>
+        {isSignUpOpen && (
+          <ModalWindow
+            onCloseModal={handleSignUpClose}
+            modalIsOpen={isSignUpOpen}
+          >
+            <SignUp modalClose={handleSignUpClose} />
+          </ModalWindow>
+        )}
 
-      {isSignUpOpen && (
-        <ModalWindow
-          onCloseModal={handleSignUpClose}
-          modalIsOpen={isSignUpOpen}
-        >
-          <SignUp modalClose={handleSignUpClose} />
-        </ModalWindow>
-      )}
-
-      {isSignInOpen && (
-        <ModalWindow
-          onCloseModal={handleSignInClose}
-          modalIsOpen={isSignInOpen}
-        >
-          <SignIn modalClose={handleSignInClose} />
-        </ModalWindow>
-      )}
+        {isSignInOpen && (
+          <ModalWindow
+            onCloseModal={handleSignInClose}
+            modalIsOpen={isSignInOpen}
+          >
+            <SignIn modalClose={handleSignInClose} />
+          </ModalWindow>
+        )}
+      </>
     </div>
   );
 };
