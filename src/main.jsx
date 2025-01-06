@@ -12,6 +12,13 @@ Modal.setAppElement('#root');
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
+      future=
+      {{
+        v7_startTransition: true,
+        v7_relativeSplatPath: true,
+        v7_normalizeFormMethod: true,
+        v7_routerProviderHydration: true,
+      }}
       <Provider store={store}>
         <App />
       </Provider>
