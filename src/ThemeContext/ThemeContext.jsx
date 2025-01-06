@@ -23,9 +23,7 @@ const ThemeProvider = ({ children }) => {
   const value = useMemo(() => ({ theme, toggleTheme }), [theme]);
 
   return (
-    <ThemeContext.Provider value={value}>
-      <div data-theme={theme}>{children}</div>
-    </ThemeContext.Provider>
+    <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
   );
 };
 
