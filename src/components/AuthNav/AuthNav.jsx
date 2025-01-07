@@ -26,7 +26,7 @@ const AuthNav = () => {
   const handleSignInClose = () => setIsSignInOpen(false);
 
   return (
-    <div className={styles.container}>
+    <>
       {!isLoggedIn && (
         <div className={styles.unWrapper}>
           <button
@@ -96,7 +96,7 @@ const AuthNav = () => {
           </ModalWindow>
         )}
       </>
-    </div>
+    </>
   );
 };
 

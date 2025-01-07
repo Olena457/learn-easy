@@ -5,14 +5,17 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import 'modern-normalize';
 import './App.css';
+
 import Layout from './components/Layout/Layout.jsx';
 import { auth } from './firebase/firebaseConfig.js';
 import { refreshUser } from './redux/auth/operationsAuth.js';
 import { selectIsRefreshing } from './redux/auth/selectorsAuth.js';
+import AppBar from './components/AppBar/AppBar.jsx';
 import PrivateRoute from './components/PrivateRoute.jsx';
 import Modal from 'react-modal';
 import Loader from './components/Loader/Loader.jsx';
 import { ThemeProvider } from './ThemeContext/ThemeContext.jsx';
+// import useTheme from './hooks/useTheme.js';
 
 const HomePage = lazy(() => import('./pages/HomePage/HomePage.jsx'));
 const TeachersPage = lazy(() =>
@@ -46,26 +49,25 @@ function App() {
     <Loader />
   ) : (
     <ThemeProvider>
-      <Layout>
-        <Suspense fallback={<Loader />}>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/teachers" element={<TeachersPage />} />
-            <Route
-              path="/favorites"
-              element={
-                <PrivateRoute
-                  redirectTo="/"
-                  component={<FavoritesTeachersPage />}
-                />
-              }
-            />
-            <Route path="*" element={<NotFoundPage />} />
-          </Routes>
-        </Suspense>
-
-        <ToastContainer />
-      </Layout>
+      <Suspense fallback={<Loader />}>
+        <AppBar />
+        <Routes>
+          <Route path="/" element={<Layout />} />
+          <Route index element={<HomePage />} />
+          <Route path="/teachers" element={<TeachersPage />} />
+          <Route
+            path="/favorites"
+            element={
+              <PrivateRoute
+                redirectTo="/"
+                component={<FavoritesTeachersPage />}
+              />
+            }
+          />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </Suspense>
+      <ToastContainer />
     </ThemeProvider>
   );
 }

@@ -1,6 +1,6 @@
-.mainWrapper {
+/* .mainWrapper {
   display: none;
-}
+} */
 .header {
   display: block;
   padding: 0px 10px;
@@ -25,11 +25,11 @@
     width: 18px;
     height: 18px;
   }
-  .mainWrapper {
+  /* .mainWrapper {
     display: flex;
     justify-content: space-between;
     width: 100%;
-  }
+  } */
 
   .mainContainer {
     display: flex;

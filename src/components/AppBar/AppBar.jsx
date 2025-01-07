@@ -8,17 +8,22 @@ import MobileMenu from '../MobileMenu/MobileMenu.jsx';
 import ThemeSwitcher from '../ThemeSwitcher/ThemeSwitcher.jsx';
 import useTheme from '../../hooks/useTheme.js';
 import styles from './AppBar.module.css';
+import HeaderContainer from '../HeaderContainer/HeaderContainer.jsx';
 
 const AppBar = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
-  const { theme } = useTheme();
+  const { theme, toggleTheme } = useTheme();
 
   const buildActiveClass = ({ isActive }) => {
     return clsx(styles.link, isActive && styles.active);
   };
   return (
-    <header className={`${styles.header} ${styles[theme]}`} role="banner">
-      <div className={styles.mainWrapper}>
+    // <header className={`${styles.header} ${styles[theme]}`} role="banner">
+    <>
+      <HeaderContainer
+        className={`${styles.header} ${styles[theme]}`}
+        role="banner"
+      >
         <Link to="/" className={styles.logoContainer}>
           <img
             src={ukraine}
@@ -49,13 +54,12 @@ const AppBar = () => {
             </NavLink>
           )}
         </nav>
-        <>
-          <ThemeSwitcher />
-          <AuthNav />
-        </>
-      </div>
+
+        <ThemeSwitcher toggleTheme={toggleTheme} />
+        <AuthNav theme={theme} />
+      </HeaderContainer>
       <MobileMenu />
-    </header>
+    </>
   );
 };
 
