@@ -33,7 +33,7 @@ const ThemeContext = createContext();
 const ThemeProvider = ({ children }) => {
   const getInitialTheme = () => {
     const savedTheme = localStorage.getItem('theme');
-    return savedTheme || 'blue'; // Початкова тема "blue"
+    return savedTheme || 'blue';
   };
 
   const [theme, setTheme] = useState(getInitialTheme);

@@ -14,7 +14,7 @@ import AppBar from './components/AppBar/AppBar.jsx';
 import PrivateRoute from './components/PrivateRoute.jsx';
 import Modal from 'react-modal';
 import Loader from './components/Loader/Loader.jsx';
-import ThemeProvider from './ThemeContext/ThemeContext.jsx';
+// import ThemeProvider from './ThemeContext/ThemeContext.jsx';
 
 const HomePage = lazy(() => import('./pages/HomePage/HomePage.jsx'));
 const TeachersPage = lazy(() =>
@@ -28,7 +28,7 @@ const NotFoundPage = lazy(() =>
   import('./pages/NotFoundPage/NotFoundPage.jsx')
 );
 
-Modal.setAppElement('#modal-root');
+Modal.setAppElement('#root');
 
 function App() {
   const dispatch = useDispatch();
@@ -47,7 +47,7 @@ function App() {
   return isRefreshing ? (
     <Loader />
   ) : (
-    <ThemeProvider>
+    <>
       <Suspense fallback={<Loader />}>
         <AppBar />
         <Routes>
@@ -67,7 +67,7 @@ function App() {
         </Routes>
       </Suspense>
       <ToastContainer />
-    </ThemeProvider>
+    </>
   );
 }
 

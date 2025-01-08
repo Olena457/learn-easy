@@ -1,4 +1,4 @@
-.section {
+/* .section {
   border: 1.8px dashed var(--accent-color, #9fb7ce);
   border-radius: 30px;
   min-width: 285px;
@@ -83,8 +83,9 @@
     flex-wrap: nowrap;
   }
   .item {
-    /* width: unset;
-    justify-content: unset; */
     align-items: center;
   }
-}
+} */
+
+/* width: unset;
+justify-content: unset; */
