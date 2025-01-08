@@ -1,17 +1,13 @@
-/* .themeSwitcher {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  padding-top: 15px;
-}
-  .themeSwitcher {
-    padding-top: 0px;
-    gap: 18px;
-  } */
-
 .themeSwitcher {
   display: flex;
   gap: 10px;
   margin-left: 10px;
   align-items: center;
+}
+@media (min-width: 425px) and (max-width: 768px) {
+  .themeSwitcher {
+    display: flex;
+    gap: 15px;
+    margin-left: 50px;
+  }
 }

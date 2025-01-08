@@ -9,7 +9,7 @@ import eyeIcon from '../../assets/icons/eye.svg';
 import { toast } from 'react-toastify';
 import { useDispatch } from 'react-redux';
 import { loginUser } from '../../redux/auth/operationsAuth.js';
-
+import useTheme from '../../hooks/useTheme.js';
 const emailRegExp = /^[\w.-]+@[a-zA-Z]+\.[a-zA-Z]{2,}$/;
 
 const minPasswordLength = 7;
@@ -30,6 +30,7 @@ const signInSchema = yup.object({
 });
 
 const SignIn = ({ modalClose }) => {
+  const { theme } = useTheme();
   const dispatch = useDispatch();
   const [isPassword, setIsPassword] = useState(true);
 
@@ -134,7 +135,12 @@ const SignIn = ({ modalClose }) => {
           )}
         </div>
 
-        <button type="submit" className={styles.buttonSign} aria-label="log in">
+        <button
+          type="submit"
+          className={styles.buttonSign}
+          aria-label="log in"
+          data-theme={theme}
+        >
           Log In
         </button>
       </form>

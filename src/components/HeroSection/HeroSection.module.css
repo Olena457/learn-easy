@@ -53,6 +53,11 @@
   .wrapperLink {
     justify-content: unset;
   }
+  .text {
+    font-size: 16px;
+    line-height: 1.375;
+    letter-spacing: -0.02em;
+  }
   .link {
     padding: 16px 88px;
   }

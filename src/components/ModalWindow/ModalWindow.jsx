@@ -19,6 +19,7 @@ const ModalWindow = ({ modalIsOpen, onCloseModal, children }) => {
       shouldCloseOnOverlayClick={true}
       shouldCloseOnEsc={true}
       className={style.modalWindow}
+      ariaHideApp={false}
       style={{
         overlay: {
           backgroundColor: 'rgba(17, 18, 19, 0.4)',

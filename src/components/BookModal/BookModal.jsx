@@ -6,7 +6,7 @@ import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { bookTeacher } from '../../redux/teachers/operationsTeachers.js';
 import { toast } from 'react-toastify';
-
+import useTheme from '../../hooks/useTheme.js';
 const emailRegExp = /^[\w.-]+@[a-zA-Z]+\.[a-zA-Z]{2,}$/;
 const phoneNumberRegExp = /^\+?[\d\s-]{7,15}$/;
 
@@ -28,8 +28,8 @@ const bookSchema = yup.object({
 });
 
 const BookModal = ({ modalClose, teacher }) => {
+  const { theme } = useTheme();
   const dispatch = useDispatch();
-
   const fullnameId = useId();
   const emailId = useId();
   const phoneNumberId = useId();
@@ -254,7 +254,12 @@ const BookModal = ({ modalClose, teacher }) => {
           </>
         </div>
 
-        <button type="submit" className={styles.submitBtn} aria-label="book">
+        <button
+          type="submit"
+          className={styles.submitBtn}
+          aria-label="book"
+          data-theme={theme}
+        >
           Book
         </button>
       </form>

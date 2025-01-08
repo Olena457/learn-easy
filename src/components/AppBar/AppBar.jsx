@@ -18,12 +18,8 @@ const AppBar = () => {
     return clsx(styles.link, isActive && styles.active);
   };
   return (
-    // <header className={`${styles.header} ${styles[theme]}`} role="banner">
-    <>
-      <HeaderContainer
-        className={`${styles.header} ${styles[theme]}`}
-        role="banner"
-      >
+    <header className={`${styles.header} ${styles[theme]}`} role="banner">
+      <HeaderContainer className={styles.header} role="banner">
         <Link to="/" className={styles.logoContainer}>
           <img
             src={ukraine}
@@ -34,13 +30,19 @@ const AppBar = () => {
           <span className={styles.logoName}>learnLingo</span>
         </Link>
         <nav className={styles.nav}>
-          <NavLink to="/" className={buildActiveClass} aria-label="Home">
+          <NavLink
+            to="/"
+            className={buildActiveClass}
+            aria-label="Home"
+            data-theme={theme}
+          >
             Home
           </NavLink>
           <NavLink
             to="/teachers"
             className={buildActiveClass}
             aria-label="Teachers"
+            data-theme={theme}
           >
             Teachers
           </NavLink>
@@ -49,6 +51,7 @@ const AppBar = () => {
               to="/favorites"
               className={buildActiveClass}
               aria-label="Favorites"
+              data-theme={theme}
             >
               Favorites
             </NavLink>
@@ -56,10 +59,10 @@ const AppBar = () => {
         </nav>
 
         <ThemeSwitcher toggleTheme={toggleTheme} />
-        <AuthNav theme={theme} />
+        <AuthNav data-theme={theme} />
       </HeaderContainer>
       <MobileMenu />
-    </>
+    </header>
   );
 };
 

@@ -6,8 +6,11 @@ import Icon from '../Icon/Icon.jsx';
 import { useSelector } from 'react-redux';
 import { selectIsLoggedIn } from '../../redux/auth/selectorsAuth.js';
 import { NavLink } from 'react-router-dom';
+import useTheme from '../../hooks/useTheme.js';
 
 const MobileNav = ({ isOpen, closeModal }) => {
+  const { theme } = useTheme();
+
   const isLoggedIn = useSelector(selectIsLoggedIn);
 
   useEffect(() => {
@@ -30,7 +33,7 @@ const MobileNav = ({ isOpen, closeModal }) => {
         className={styles.modal}
         overlayClassName={styles.overlay}
         contentLabel="Mobile Menu"
-        ariaHideApp={undefined}
+        ariaHideApp={false}
       >
         <button
           type="button"
@@ -49,6 +52,7 @@ const MobileNav = ({ isOpen, closeModal }) => {
                 className={buildLinkClass}
                 onClick={closeModal}
                 aria-label="Home"
+                data-theme={theme}
               >
                 Home
               </NavLink>
@@ -59,6 +63,7 @@ const MobileNav = ({ isOpen, closeModal }) => {
                 className={buildLinkClass}
                 onClick={closeModal}
                 aria-label="Teachers"
+                data-theme={theme}
               >
                 Teachers
               </NavLink>
@@ -70,6 +75,7 @@ const MobileNav = ({ isOpen, closeModal }) => {
                   className={buildLinkClass}
                   onClick={closeModal}
                   aria-label="Favorites"
+                  data-theme={theme}
                 >
                   Favorites
                 </NavLink>

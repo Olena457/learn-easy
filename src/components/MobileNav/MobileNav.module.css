@@ -31,6 +31,9 @@
   text-decoration: none;
 }
 
+.active {
+  color: var(--accent-color, #9fb7ce);
+}
 .closeBtn {
   position: absolute;
   top: 20px;
@@ -41,9 +44,6 @@
   cursor: pointer;
 }
 
-.active {
-  color: red;
-}
 @media (min-width: 768px) {
   .modal {
     display: none;

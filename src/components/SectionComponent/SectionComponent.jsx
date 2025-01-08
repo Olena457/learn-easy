@@ -1,27 +1,3 @@
-// const SectionComponent = ({ children }) => {
-//   return <div>{children}</div>;
-// };
-// export default SectionComponent;
-// import styles from './SectionComponent.module.css';
-// import PropTypes from 'prop-types';
-
-// const SectionComponent = ({ children, theme, className }) => {
-//   return (
-//     <div
-//       className={`${styles.section} ${theme ? styles[theme] : ''} ${className}`}
-//     >
-//       {children}
-//     </div>
-//   );
-// };
-
-// SectionComponent.propTypes = {
-//   children: PropTypes.node.isRequired,
-//   theme: PropTypes.string,
-//   className: PropTypes.string,
-// };
-
-// export default SectionComponent;
 import useTheme from '../../hooks/useTheme.js';
 import styles from './SectionComponent.module.css';
 const SectionComponent = () => {

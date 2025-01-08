@@ -1,13 +1,19 @@
 import { useId } from 'react';
 import styles from './FilterBar.module.css';
+import useTheme from '../../hooks/useTheme.js';
 
 const FilterBar = () => {
+  const { theme } = useTheme();
   const languagesId = useId();
   const levelId = useId();
   const priceId = useId();
 
   return (
-    <div className={styles.wrapper} aria-labelledby="filter-bar-title">
+    <div
+      className={styles.wrapper}
+      aria-labelledby="filter-bar-title"
+      data-theme={theme}
+    >
       <ul className={styles.list}>
         <li className={styles.item}>
           <label htmlFor={languagesId} className={styles.label}>
