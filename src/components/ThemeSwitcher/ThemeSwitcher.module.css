@@ -1,13 +1,14 @@
-.themeSwitcher {
+/* .themeSwitcher {
   display: flex;
   gap: 10px;
   margin-left: 10px;
   align-items: center;
-}
-@media (min-width: 425px) and (max-width: 768px) {
+} */
+@media (min-width: 767px) {
   .themeSwitcher {
     display: flex;
-    gap: 15px;
-    margin-left: 50px;
+    gap: 10px;
+    margin-left: 10px;
+    align-items: center;
   }
 }

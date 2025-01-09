@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import useTheme from '../../hooks/useTheme.js';
 import {
   selectTeachersError,
   selectTeachersLoading,
@@ -12,7 +11,6 @@ import Loader from '../Loader/Loader.jsx';
 const PER_PAGE = 4;
 
 const TeachersList = ({ teachers }) => {
-  const { theme } = useTheme();
   const loading = useSelector(selectTeachersLoading);
   const error = useSelector(selectTeachersError);
 
@@ -48,7 +46,6 @@ const TeachersList = ({ teachers }) => {
               type="button"
               className={styles.moreBtn}
               onClick={handleShowMore}
-              data-theme={theme}
               aria-label="Load more teachers"
             >
               Load more

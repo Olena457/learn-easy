@@ -1,18 +1,17 @@
-// import { useState } from 'react';
+import { useState } from 'react';
 import styles from './MobileMenu.module.css';
 import AuthNav from '../AuthNav/AuthNav.jsx';
-// import MobileNav from '../MobileNav/MobileNav.jsx';
-import ThemeSwitcher from '../ThemeSwitcher/ThemeSwitcher.jsx';
+import MobileNav from '../MobileNav/MobileNav.jsx';
 import Icon from '../Icon/Icon.jsx';
 
 const MobileMenu = () => {
-  // const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const openModal = () => {
-    // setIsOpen(true);
+    setIsOpen(true);
   };
 
-  // const closeModal = () => setIsOpen(false);
+  const closeModal = () => setIsOpen(false);
 
   return (
     <>
@@ -36,10 +35,8 @@ const MobileMenu = () => {
           </button>
           <AuthNav />
         </div>
-        <div className={styles.themeWrapper}>
-          <ThemeSwitcher />
-        </div>
-        {/* {isOpen && <MobileNav isOpen={isOpen} closeModal={closeModal} />} */}
+        <div className={styles.themeWrapper}></div>
+        {isOpen && <MobileNav isOpen={isOpen} closeModal={closeModal} />}
       </div>
     </>
   );

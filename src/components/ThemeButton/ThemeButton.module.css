@@ -1,26 +1,33 @@
-.circle {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  border: none;
-  cursor: pointer;
-  transition: transform 0.3s;
+@media (min-width: 280px) and (max-width: 767px) {
+  .button {
+    display: none;
+  }
 }
-.circle:hover,
-.circle:focus,
-.circle:active {
-  transform: scale(1.1);
-  border: 1px solid #94948e;
-}
+@media (min-width: 768px) {
+  .circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: burlywood;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+  .circle:hover,
+  .circle:focus {
+    transform: scale(1.2);
+    border: 1px solid #94948e;
+  }
 
-.btnBlue {
-  background-color: #9fb7ce;
-}
+  /* .btnBlue {
+    background-color: #9fb7ce;
+  }
 
-.btnYellow {
-  background-color: #f4c550;
-}
+  .btnYellow {
+    background-color: #f4c550;
+  }
 
-.btnRed {
-  background-color: #e0a39a;
+  .btnRed {
+    background-color: #da9c93;
+  } */
 }

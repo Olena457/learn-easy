@@ -23,7 +23,11 @@ const TeachersPage = () => {
     <main className={css.main}>
       <>
         <FilterBar />
-        {isLoading ? <Loader /> : <TeachersList teachers={teachers} />}
+        {isLoading ? (
+          <Loader />
+        ) : (
+          <TeachersList teachers={teachers} element={<TeachersPage />} />
+        )}
       </>
     </main>
   );

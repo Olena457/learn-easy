@@ -2,7 +2,7 @@
   border-radius: 30px;
   padding: 24px;
   min-width: 285px;
-  background: var(--lightgray-color, gray);
+  background: var(--white-color, #fff);
 }
 
 .title {
@@ -42,7 +42,7 @@
   color: var(--black-color, black);
 }
 .link:hover {
-  background: var(--hover-color);
+  color: var(--hover-color);
 }
 @media (min-width: 768px) {
   .section {

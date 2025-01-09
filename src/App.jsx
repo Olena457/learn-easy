@@ -5,17 +5,15 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import 'modern-normalize';
 import './App.css';
-
-import Layout from './components/Layout/Layout.jsx';
 import { auth } from './firebase/firebaseConfig.js';
 import { refreshUser } from './redux/auth/operationsAuth.js';
 import { selectIsRefreshing } from './redux/auth/selectorsAuth.js';
 import AppBar from './components/AppBar/AppBar.jsx';
+import Layout from './components/Layout/Layout.jsx';
 import PrivateRoute from './components/PrivateRoute.jsx';
 import Modal from 'react-modal';
 import Loader from './components/Loader/Loader.jsx';
-// import ThemeProvider from './ThemeContext/ThemeContext.jsx';
-
+import { useTheme } from './hooks/use-theme.js';
 const HomePage = lazy(() => import('./pages/HomePage/HomePage.jsx'));
 const TeachersPage = lazy(() =>
   import('./pages/TeachersPage/TeachersPage.jsx')
@@ -31,6 +29,7 @@ const NotFoundPage = lazy(() =>
 Modal.setAppElement('#root');
 
 function App() {
+  const { theme, setTheme } = useTheme();
   const dispatch = useDispatch();
   const isRefreshing = useSelector(selectIsRefreshing);
 
@@ -49,10 +48,13 @@ function App() {
   ) : (
     <>
       <Suspense fallback={<Loader />}>
-        <AppBar />
+        <AppBar theme={theme} setTheme={setTheme} />
         <Routes>
           <Route path="/" element={<Layout />} />
-          <Route index element={<HomePage />} />
+          <Route
+            index
+            element={<HomePage theme={theme} setTheme={setTheme} />}
+          />
           <Route path="/teachers" element={<TeachersPage />} />
           <Route
             path="/favorites"

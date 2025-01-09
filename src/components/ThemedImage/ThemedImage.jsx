@@ -1,10 +1,7 @@
-import useTheme from '../../hooks/useTheme.js';
 import ThemeImageComponent from '../ThemeImageComponent/ThemeImageComponent.jsx';
 import styles from './ThemedImage.module.css';
 
-const ThemedImage = () => {
-  const { theme } = useTheme();
-
+const ThemedImage = ({ theme }) => {
   return (
     <div className={styles.imageContainer}>
       <ThemeImageComponent theme={theme} />
