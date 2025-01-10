@@ -1,13 +1,13 @@
-# <span style="color:orange">Learn easy</span>
+# <h1 style="color: #1E90FF;">Learn easy</h1>
 
 This application is for selecting a language to learn and booking teachers.
 
 [Check out the website here](https://learn-easy-7lg4.vercel.app/)
 
-<p > <img src="../learn-easy/src/assets/image/blue-theme.jpg" alt="Image 1" width="180" height="180" style="border-radius: 50%; display: inline-block; margin-right: 10px;"> 
- <img src="../learn-easy/src/assets/image/red-theme.jpg" alt="Image 1" width="180" height="180" style="border-radius: 50%; display: inline-block; margin-right: 10px;"> <img src="../learn-easy/src/assets/image/yellow-theme.jpg" alt="Image 2" width="180" height="180" style="border-radius: 50%; display: inline-block;"> </p>
+<p > <img src="./src/assets/image/blue-theme.jpg" alt="Image 1" width="180" height="180" style="border-radius: 50%; display: inline-block; margin-right: 10px;"> 
+ <img src="./src/assets/image/red-theme.jpg" alt="Image 1" width="180" height="180" style="border-radius: 50%; display: inline-block; margin-right: 10px;"> <img src="./src/assets/image/yellow-theme.jpg" alt="Image 2" width="180" height="180" style="border-radius: 50%; display: inline-block;"> </p>
 
-### <span style="color:gold">The techologies used in production :</span>
+### The techologies used in production :
 
 - Built with native JS
 - Bundler: Vite
@@ -21,19 +21,19 @@ This application is for selecting a language to learn and booking teachers.
 4. WCAG compliant
 5. Accessible color theme
 
-### <span style="color:gold">The application consists of the following pages:</span>
+### The application consists of the following pages:
 
 - Home page
 - Teacher page
 - Favorites page
 
-### <span style="color:gold">Interaction with the website through forms:</span>
+### Interaction with the website through forms:
 
 - Registration
 - Login
 - Booking teachers
 
-#### <span style="color:gold">Installation for developers looking to run the project locally:</span>
+#### Installation for developers looking to run the project locally:
 
 1. git clone: github code
 2. cd: learn-easy
