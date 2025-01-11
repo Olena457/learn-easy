@@ -14,10 +14,10 @@
   margin-bottom: 32px;
 }
 .focus {
-  background-color: var(--secondary-color);
   border-radius: 10px;
   font-style: italic;
   font-weight: 400;
+  background-color: var(--secondary-color);
 }
 .text {
   font-size: 16px;
@@ -34,15 +34,17 @@
 .link {
   border-radius: 12px;
   padding: 16px 44px;
-  background: var(--accent-color);
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
   font-size: 18px;
   line-height: 1.55556;
   color: var(--black-color, black);
+  background-color: var(--accent-color);
+  transition: background-color var(--transition), color var(--transition);
 }
 .link:hover {
-  color: var(--hover-color);
+  background-color: var(--hover-color);
+  color: var(--dark-gray-color, #a9a9a9);
 }
 @media (min-width: 768px) {
   .section {
@@ -62,9 +64,9 @@
     padding: 16px 88px;
   }
 }
-@media (min-width: 1440px) {
+@media (min-width: 1400px) {
   .section {
-    width: 720px;
+    width: 100%;
     padding: 98px 64px;
   }
 

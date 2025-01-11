@@ -7,6 +7,7 @@
 
 @media (min-width: 1440px) {
   .main {
+    max-width: 1440;
     padding: 0px 50px 40px;
   }
 }

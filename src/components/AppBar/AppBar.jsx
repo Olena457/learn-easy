@@ -18,7 +18,7 @@ const AppBar = ({ setTheme }) => {
   return (
     <>
       <header className={styles.header} role="banner">
-        <HeaderContainer className={styles.header} role="banner">
+        <HeaderContainer role="banner">
           <Link to="/" className={styles.logoContainer}>
             <img
               src={ukraine}
@@ -60,3 +60,4 @@ const AppBar = ({ setTheme }) => {
 };
 
 export default AppBar;
+//  className={styles.headerContainer}

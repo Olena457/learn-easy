@@ -19,7 +19,7 @@
   font-weight: 500;
   font-size: 14px;
   line-height: 1.28571;
-  color: var(--gray-color, gray);
+  color: var(--dark-gray-color, #a9a9a9);
 }
 
 .select {
@@ -43,7 +43,7 @@
   }
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1400px) and (max-width: 1440px) {
   .wrapper {
     margin: 0 64px 32px;
   }

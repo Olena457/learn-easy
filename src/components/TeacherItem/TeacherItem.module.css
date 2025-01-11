@@ -35,10 +35,16 @@
 }
 
 .name {
+  cursor: pointer;
   font-size: 28px;
   text-align: center;
+  color: var(--black-color, #121417);
+  transition: color var(--transition);
 }
-
+.name:hover,
+.name:focus {
+  color: var(--accent-color, #9fb7ce);
+}
 .lessonsWrapper {
   display: flex;
   justify-content: space-between;
@@ -74,15 +80,20 @@
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
-  color: var(--dark-gray-color, rgb(118, 116, 116));
+  color: var(--dark-gray-color, #a9a9a9);
 }
 
 .criterionLang {
   text-decoration: underline;
+  cursor: pointer;
   text-decoration-skip-ink: none;
   color: var(--black-color, black);
+  transition: background-color var(--transition), color var(--transition);
 }
-
+.criterionLang:hover,
+.criterionLang:focus {
+  color: var(--accent-color, #9fb7ce);
+}
 .criterionText {
   color: var(--black-color, black);
 }
@@ -99,8 +110,13 @@
   text-decoration: underline;
   text-decoration-skip-ink: none;
   color: var(--black-color, black);
+  transition: color var(--transition);
 }
-
+.readMoreBtn:hover,
+.readMoreBtn:focus,
+.readMoreBtn:active {
+  color: var(--accent-color, #9fb7ce);
+}
 .levelsList {
   margin-top: 32px;
   display: flex;
@@ -143,6 +159,7 @@
 }
 
 .reviewAvatar {
+  cursor: pointer;
   width: 44px;
   height: 44px;
   border-radius: 50%;
@@ -174,22 +191,29 @@
   font-size: 14px;
   line-height: 1.28571;
   color: var(--green-color, #38cd3e);
+  transition: color var(--transition);
 }
-
+.closeText:hover,
+.closeText:focus,
+.closeText:active {
+  color: #ffc531;
+}
 .bookBtn {
   width: 100%;
   margin-top: 32px;
   border-radius: 12px;
   padding: 16px 48px;
-  background: var(--accent-color, #9fb7ce);
   font-weight: 700;
   font-size: 18px;
   line-height: 1.55556;
   color: var(--black-color, black);
+  background: var(--accent-color, #9fb7ce);
+  transition: background-color var(--transition), color var(--transition);
 }
 
 .bookBtn:hover {
-  background: var(--hover-color, #afc7dc);
+  background-color: var(--hover-color, #afc7dc);
+  color: var(--dark-gray-color, #a9a9a9);
 }
 
 @media (min-width: 768px) {
@@ -208,6 +232,12 @@
     width: 96px;
     height: 96px;
     border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+  }
+  .avatar:hover,
+  .avatar:focus {
+    transform: scale(1.05);
   }
 
   .onlineIcon {

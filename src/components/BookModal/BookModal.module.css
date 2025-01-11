@@ -2,6 +2,7 @@
   width: 268px;
   max-height: 90vh;
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .title {
@@ -16,7 +17,7 @@
 .text {
   font-size: 16px;
   line-height: 1.375;
-  color: rgba(18, 20, 23, 0.8);
+  color: var(--black-color, #121417);
   margin-bottom: 20px;
 }
 
@@ -36,7 +37,7 @@
   font-weight: 500;
   font-size: 12px;
   line-height: 1.33333;
-  color: var(--gray-color, gray);
+  color: var(--dark-gray-color, #a9a9a9);
   margin-bottom: 4px;
 }
 
@@ -62,7 +63,7 @@
   font-weight: 500;
   font-size: 24px;
   line-height: 1.33333;
-  color: var(--black-color, black);
+  color: var(--black-color, #121417);
   margin-bottom: 15px;
 }
 
@@ -116,14 +117,18 @@
   border-radius: 12px;
   width: 268px;
   height: 60px;
-  background: var(--accent-color, #9fb7ce);
   font-weight: 700;
   font-size: 18px;
   line-height: 1.55556;
-  color: var(--black-color, black);
+  color: var(--black-color, #121417);
+  background: var(--accent-color, #9fb7ce);
+  transition: background-color var(--transition), color var(--transition);
 }
-.submitBtn:hover {
+.submitBtn:hover,
+.submitBtn:focus,
+.submitBtn:active {
   background-color: var(--hover-color, #afc7dc);
+  color: var(--dark-gray-color, #a9a9a9);
 }
 .errorText {
   position: absolute;

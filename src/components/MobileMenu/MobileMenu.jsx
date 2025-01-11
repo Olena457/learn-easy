@@ -28,7 +28,7 @@ const MobileMenu = () => {
               role="button"
               width="32"
               height="32"
-              className={styles.icon}
+              className={styles.iconBurger}
               fillColor="#121417"
               inert="falce"
             />

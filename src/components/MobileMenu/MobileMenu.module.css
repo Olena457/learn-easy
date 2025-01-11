@@ -4,16 +4,11 @@
 
 .wrapper {
   display: flex;
-  padding: 0 70px;
   justify-content: space-between;
 }
-@media (min-width: 425px) {
+@media (min-width: 420px) {
   .themeWrapper {
     margin: 0 auto;
-  }
-
-  .wrapper {
-    padding: 0 60px;
   }
 }
 

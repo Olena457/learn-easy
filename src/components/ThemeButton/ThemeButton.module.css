@@ -8,18 +8,18 @@
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background-color: burlywood;
     border: none;
     cursor: pointer;
     transition: transform 0.3s;
   }
   .circle:hover,
   .circle:focus {
+    opacity: 0.5;
     transform: scale(1.2);
     border: 1px solid #94948e;
   }
 
-  /* .btnBlue {
+  .btnBlue {
     background-color: #9fb7ce;
   }
 
@@ -29,5 +29,5 @@
 
   .btnRed {
     background-color: #da9c93;
-  } */
+  }
 }
