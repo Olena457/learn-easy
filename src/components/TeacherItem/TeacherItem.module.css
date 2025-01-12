@@ -184,6 +184,49 @@
   line-height: 1.5;
   color: var(--black-color, black);
 }
+.starIcon {
+  cursor: pointer;
+  width: 16px;
+  transition: transform 0.3s ease;
+}
+.starIcon:hover,
+.starIcon:focus {
+  transform: scale(1.5);
+}
+
+.heartIconFull {
+  cursor: pointer;
+  width: 26px;
+  transition: transform 0.3s ease;
+}
+.heartIconFull:hover,
+.heartIconFull:focus {
+  transform: scale(1.2);
+}
+
+.heartIcon {
+  width: 26px;
+  stroke-width: 2px;
+  cursor: pointer;
+  stroke: var(--dark-gray-color, #a9a9a9);
+}
+.heartIcon:hover,
+.heartIcon:focus {
+  stroke: var(--red-color, #e62828);
+  stroke-width: 2px;
+  cursor: pointer;
+  transition: fill 0.3s ease;
+}
+.arrowIcon {
+  cursor: pointer;
+  width: 16px;
+  transition: transform 0.3s ease;
+}
+
+.arrowIcon:hover,
+.arrowIcon:focus {
+  transform: scale(1.4);
+}
 
 .closeText {
   margin-left: 5px;

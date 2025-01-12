@@ -12,9 +12,6 @@
 .loginButton:focus {
   color: var(--dark-gray-color, #a9a9a9);
 }
-.logoutIcon {
-  display: block;
-}
 
 .loginText {
   color: var(--black-color, #121417);

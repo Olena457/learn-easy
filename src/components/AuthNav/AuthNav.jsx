@@ -67,7 +67,7 @@ const AuthNav = () => {
             <img
               src={logoutIcon}
               alt="Logout icon"
-              className={styles.logoutIcon}
+              className={`logoutIcon ${styles.logoutIcon}`}
               role="button"
               inert="false"
             />

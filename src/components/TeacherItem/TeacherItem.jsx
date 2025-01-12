@@ -57,7 +57,7 @@ const TeacherItem = ({ teacher }) => {
               role="presentation"
               width={16}
               height={16}
-              className={styles.starIcon}
+              className={`starIcon ${styles.starIcon}`}
               fillColor="#ffc531"
               inert="true"
             />
@@ -111,7 +111,7 @@ const TeacherItem = ({ teacher }) => {
                   aria-label="star"
                   width={16}
                   height={16}
-                  className={styles.starIcon}
+                  className={`starIcon ${styles.starIcon}`}
                   fillColor="#ffc531"
                   inert="true"
                 />
@@ -129,7 +129,7 @@ const TeacherItem = ({ teacher }) => {
                   role="button"
                   width={26}
                   height={26}
-                  className={styles.heartIcon}
+                  className={`heartIconFull ${styles.heartIconFull}`}
                   fillColor="#f00b0b"
                   inert="false"
                 />
@@ -139,7 +139,7 @@ const TeacherItem = ({ teacher }) => {
                   role="button"
                   width={26}
                   height={26}
-                  className={styles.heartIcon}
+                  className={`heartIcon ${styles.heartIcon}`}
                   fillColor="#121417"
                   inert="false"
                 />
@@ -191,7 +191,7 @@ const TeacherItem = ({ teacher }) => {
                 id="arrow"
                 width={16}
                 height={16}
-                className={styles.arrowIcon}
+                className={`arrowIcon ${styles.arrowIcon}`}
                 fillColor="#38cd3e"
                 role="expand"
                 inert="false"

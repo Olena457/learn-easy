@@ -1,40 +1,48 @@
-# <h1 style="color: #1E90FF;">Learn easy</h1>
+# <h1 style="color:#e0b038">_Learn easy_</h1>
 
-This application is for selecting a language to learn and booking teachers.
+<h4 style="color:#9fb7ce">This application is for selecting a language to learn and booking teachers.</h4>
 
 [Check out the website here](https://learn-easy-7lg4.vercel.app/)
 
 <p > <img src="./src/assets/image/blue-theme.jpg" alt="Image 1" width="180" height="180" style="border-radius: 50%; display: inline-block; margin-right: 10px;"> 
  <img src="./src/assets/image/red-theme.jpg" alt="Image 1" width="180" height="180" style="border-radius: 50%; display: inline-block; margin-right: 10px;"> <img src="./src/assets/image/yellow-theme.jpg" alt="Image 2" width="180" height="180" style="border-radius: 50%; display: inline-block;"> </p>
 
-### The techologies used in production :
+### <h3 style="color:#e0b038"> _The techologies used in production_ :</h3>
+
+---
 
 - Built with native JS
 - Bundler: Vite
 - Application written in React
 - User authentication and data management with Firebase
 - Deployment on Vercel
+- Used library: React Modal
+- Forms managed with react-hook-form
 
-1. Responsive design for mobile, tablet, and desktop devices
-2. Used library: React Modal
-3. Forms managed with react-hook-form
-4. WCAG compliant
-5. Accessible color theme
+- ` WCAG compliant`
+- `Accessible color theme`
+- `Responsive design for mobile, tablet, and desktop devices`
 
-### The application consists of the following pages:
+### <h3 style="color:#e0b038"> _The application consists of the following pages_:</h3>
+
+---
 
 - Home page
 - Teacher page
 - Favorites page
 
-### Interaction with the website through forms:
+### <h3 style="color:#e0b038"> _Interaction with the website through forms_:</h3>
+
+---
 
 - Registration
 - Login
 - Booking teachers
 
-#### Installation for developers looking to run the project locally:
+#### <h4 style="color:#e0b038"> _Installation for developers looking to run the project locally_:</h4>
 
-1. git clone: github code
-2. cd: learn-easy
-3. npm install
+---
+
+1. `git clone`: github code
+2. `cd: learn-easy`
+3. `npm install`

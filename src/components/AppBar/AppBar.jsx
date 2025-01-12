@@ -60,4 +60,3 @@ const AppBar = ({ setTheme }) => {
 };
 
 export default AppBar;
-//  className={styles.headerContainer}
