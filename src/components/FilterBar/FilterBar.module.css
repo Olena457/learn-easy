@@ -21,7 +21,11 @@
   line-height: 1.28571;
   color: var(--dark-gray-color, #a9a9a9);
 }
-
+.message {
+  margin-top: 20px;
+  font-size: 20px;
+  color: var(--black-color, #121417);
+}
 .select {
   border-radius: 14px;
   padding: 14px 13px 14px 18px;
@@ -31,6 +35,28 @@
   line-height: 1.11111;
   color: var(--black-color, black);
   border: none;
+}
+.buttonSearch {
+  margin-top: 10px;
+  padding: 8px 16px;
+  border-radius: 10px;
+  background-color: var(--accent-color, #9fb7ce);
+  color: var(--black-color, #121417);
+  border: none;
+  cursor: pointer;
+  transition: background-color var(--transition), color var(--transition);
+}
+
+.buttonSearch:hover,
+.buttonSearch:hover,
+.buttonSearch:active {
+  background-color: var(--hover-color, #afc7dc);
+  color: var(--dark-gray-color, #a9a9a9);
+}
+.buttonSearch:disabled {
+  background-color: var(--gray-color, #dcd9d9);
+  color: var(--dark-gray-color, #a9a9a9);
+  cursor: not-allowed;
 }
 
 @media (min-width: 768px) {
@@ -45,6 +71,6 @@
 
 @media (min-width: 1400px) and (max-width: 1440px) {
   .wrapper {
-    margin: 0 64px 32px;
+    margin: 0 auto 32px;
   }
 }

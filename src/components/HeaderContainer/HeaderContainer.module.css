@@ -4,8 +4,9 @@
 @media (min-width: 768px) {
   .mainWrapperContainer {
     display: flex;
-    justify-content: space-between;
+    margin-bottom: 20px;
     width: 100%;
-    padding: 5px 40px 5px 20px;
+    padding: 5px 20px 5px 10px;
+    justify-content: space-between;
   }
 }

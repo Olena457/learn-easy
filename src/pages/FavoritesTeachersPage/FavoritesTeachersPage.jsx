@@ -1,6 +1,6 @@
 import styles from './FavoritesTeachersPage.module.css';
 import { useDispatch, useSelector } from 'react-redux';
-import FilterBar from '../../components/FilterBar/FilterBar.jsx';
+// import FilterBar from '../../components/FilterBar/FilterBar.jsx';
 import TeachersList from '../../components/TeachersList/TeachersList.jsx';
 import {
   selectFavorites,
@@ -21,7 +21,7 @@ const FavoritesTeachersPage = () => {
 
   return (
     <main className={styles.main}>
-      <FilterBar />
+      {/* <FilterBar /> */}
 
       {isLoading && <Loader />}
 

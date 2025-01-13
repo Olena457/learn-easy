@@ -113,8 +113,7 @@
   transition: color var(--transition);
 }
 .readMoreBtn:hover,
-.readMoreBtn:focus,
-.readMoreBtn:active {
+.readMoreBtn:focus {
   color: var(--accent-color, #9fb7ce);
 }
 .levelsList {
@@ -254,7 +253,8 @@
   transition: background-color var(--transition), color var(--transition);
 }
 
-.bookBtn:hover {
+.bookBtn:hover,
+.bookBtn:focus {
   background-color: var(--hover-color, #afc7dc);
   color: var(--dark-gray-color, #a9a9a9);
 }

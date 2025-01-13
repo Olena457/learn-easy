@@ -1,8 +1,8 @@
 # _Learn easy_
 
-<h4 style="color:#9fb7ce">This application is for selecting a language to learn and booking teachers.</h4>
+---
 
-_Check out the website here:_ https://learn-easy-7lg4.vercel.app/
+## **_This application is for selecting a language to learn and booking teachers._**
 
 <p > <img src="./src/assets/image/blue-theme.jpg" alt="Image 1" width="180" height="180" style="border-radius: 50%; display: inline-block; margin-right: 10px;"> 
  <img src="./src/assets/image/red-theme.jpg" alt="Image 1" width="180" height="180" style="border-radius: 50%; display: inline-block; margin-right: 10px;"> <img src="./src/assets/image/yellow-theme.jpg" alt="Image 2" width="180" height="180" style="border-radius: 50%; display: inline-block;"> </p>
@@ -21,6 +21,7 @@ _Check out the website here:_ https://learn-easy-7lg4.vercel.app/
 
 - ` WCAG compliant`
 - `Accessible color theme`
+- `filtering by criteria`
 - `Responsive design for mobile, tablet, and desktop devices`
 
 ### _The application consists of the following pages_:
@@ -29,6 +30,7 @@ _Check out the website here:_ https://learn-easy-7lg4.vercel.app/
 
 - Home page
 - Teacher page
+- Filter page
 - Favorites page
 
 ### _Interaction with the website through forms_:

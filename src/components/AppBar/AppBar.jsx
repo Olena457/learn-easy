@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux';
 import { Link, NavLink } from 'react-router-dom';
+import { selectTeachers } from '../../redux/teachers/selectorsTeachers.js';
 import AuthNav from '../AuthNav/AuthNav.jsx';
 import clsx from 'clsx';
 import { selectIsLoggedIn } from '../../redux/auth/selectorsAuth.js';
@@ -11,6 +12,7 @@ import ThemeSwitcher from '../ThemeSwitcher/ThemeSwitcher.jsx';
 
 const AppBar = ({ setTheme }) => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
+  const teachers = useSelector(selectTeachers);
   const buildActiveClass = ({ isActive }) => {
     return clsx(styles.link, isActive && styles.active);
   };
@@ -39,6 +41,16 @@ const AppBar = ({ setTheme }) => {
             >
               Teachers
             </NavLink>
+            {teachers.length > 0 && (
+              <NavLink
+                to="/filter"
+                className={buildActiveClass}
+                aria-label="Filtered Teachers"
+              >
+                {' '}
+                Filter{' '}
+              </NavLink>
+            )}
             {isLoggedIn && (
               <NavLink
                 to="/favorites"
